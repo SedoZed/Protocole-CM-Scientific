@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Activités Community Manager"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Accueil"
+      - text: "Réseaux Sociaux"
+        menu:
+          - href: reseaux/linkedin.qmd
+            text: "LinkedIn"
+          - href: reseaux/twitter.qmd
+            text: "Twitter"
+      - text: "Web"
+        menu:
+          - href: web/integration.qmd
+            text: "Intégration"
+          - href: web/rapports.qmd
+            text: "Rapports"
+      - href: strategie/calendrier.qmd
+        text: "Stratégie"
+
+format:
+  html:
+    theme: cosmo
+    css: assets/style.scss
+    toc: true
+  pdf:
+    toc: true
+    number-sections: true

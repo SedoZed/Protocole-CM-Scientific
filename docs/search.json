@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Accueil - Community Management",
+    "section": "",
+    "text": "Bienvenue\nCe site documente mes activités en tant que community manager du laboratoire.\nIl regroupe :\n\n📢 Mes actions sur les réseaux sociaux (LinkedIn, Twitter, etc.)\n🌐 Les intégrations sur le site web du laboratoire\n📆 La stratégie de communication globale"
+  },
+  {
+    "objectID": "web/rapports.html",
+    "href": "web/rapports.html",
+    "title": "Rapports en ligne",
+    "section": "",
+    "text": "Les rapports mensuels sont exportés en HTML et intégrés au site.\n\n\n\nJanvier 2025 : rapport_2025_01.html\nFévrier 2025 : rapport_2025_02.html"
+  },
+  {
+    "objectID": "web/rapports.html#liste-des-rapports",
+    "href": "web/rapports.html#liste-des-rapports",
+    "title": "Rapports en ligne",
+    "section": "",
+    "text": "Janvier 2025 : rapport_2025_01.html\nFévrier 2025 : rapport_2025_02.html"
+  },
+  {
+    "objectID": "strategie/calendrier.html",
+    "href": "strategie/calendrier.html",
+    "title": "Calendrier éditorial",
+    "section": "",
+    "text": "Calendrier\nVoici le calendrier prévisionnel de publication :\n\nlibrary(readr)\nplanning &lt;- read_csv(\"data/planning.csv\")\n\nRows: 3 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (2): Canal, Contenu\ndate (1): Date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nprint(planning)\n\n# A tibble: 3 × 3\n  Date       Canal    Contenu                        \n  &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;                          \n1 2025-05-01 LinkedIn Annonce de l'article sur les IA\n2 2025-05-08 Twitter  Citation du jour + lien article\n3 2025-05-15 Site Web Nouveau rapport mensuel"
+  },
+  {
+    "objectID": "web/integration.html",
+    "href": "web/integration.html",
+    "title": "Intégration Web",
+    "section": "",
+    "text": "# Exemple d'intégration via iframe\ncat('&lt;iframe src=\"https://monlabo.org/rapport2025.html\" width=\"100%\" height=\"500px\"&gt;&lt;/iframe&gt;')\n\n&lt;iframe src=\"https://monlabo.org/rapport2025.html\" width=\"100%\" height=\"500px\"&gt;&lt;/iframe&gt;\n\n\n\n\n\n\nQuarto pour le rendu\nGit + Netlify pour la mise en ligne (optionnel)"
+  },
+  {
+    "objectID": "web/integration.html#rapport-intégré",
+    "href": "web/integration.html#rapport-intégré",
+    "title": "Intégration Web",
+    "section": "",
+    "text": "# Exemple d'intégration via iframe\ncat('&lt;iframe src=\"https://monlabo.org/rapport2025.html\" width=\"100%\" height=\"500px\"&gt;&lt;/iframe&gt;')\n\n&lt;iframe src=\"https://monlabo.org/rapport2025.html\" width=\"100%\" height=\"500px\"&gt;&lt;/iframe&gt;"
+  },
+  {
+    "objectID": "web/integration.html#outils-utilisés",
+    "href": "web/integration.html#outils-utilisés",
+    "title": "Intégration Web",
+    "section": "",
+    "text": "Quarto pour le rendu\nGit + Netlify pour la mise en ligne (optionnel)"
+  },
+  {
+    "objectID": "reseaux/twitter.html",
+    "href": "reseaux/twitter.html",
+    "title": "Gestion Twitter",
+    "section": "",
+    "text": "Couverture des événements en direct\nRelais d’informations scientifiques\nInteraction avec la communauté\n\n\n\n\n\nNombre de retweets\nClics sur les liens\nNouveaux abonnés"
+  },
+  {
+    "objectID": "reseaux/twitter.html#objectifs",
+    "href": "reseaux/twitter.html#objectifs",
+    "title": "Gestion Twitter",
+    "section": "",
+    "text": "Couverture des événements en direct\nRelais d’informations scientifiques\nInteraction avec la communauté"
+  },
+  {
+    "objectID": "reseaux/twitter.html#métriques-suivies",
+    "href": "reseaux/twitter.html#métriques-suivies",
+    "title": "Gestion Twitter",
+    "section": "",
+    "text": "Nombre de retweets\nClics sur les liens\nNouveaux abonnés"
+  }
+]

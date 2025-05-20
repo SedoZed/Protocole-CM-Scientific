@@ -1,0 +1,23 @@
+---
+title: "Gestion LinkedIn"
+format: html
+---
+
+# LinkedIn
+
+## Objectifs
+
+- Partager les avancées du labo
+- Mettre en avant les membres
+- Créer un lien avec les partenaires
+
+## Actions
+
+- Création d’un planning éditorial
+- Analyse des performances (engagement, clics, impressions)
+
+## Exemples
+
+[Voir un post LinkedIn](https://www.linkedin.com/...)
+
+![Post exemple](../assets/images/post-linkedin.png)

@@ -1,0 +1,13 @@
+---
+title: "Rapports en ligne"
+format: html
+---
+
+# Mise en ligne des rapports
+
+Les rapports mensuels sont exportés en HTML et intégrés au site.
+
+## Liste des rapports
+
+- Janvier 2025 : [rapport_2025_01.html](https://monlabo.org/rapport_2025_01.html)
+- Février 2025 : [rapport_2025_02.html](https://monlabo.org/rapport_2025_02.html)

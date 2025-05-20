@@ -1,0 +1,14 @@
+---
+title: "Accueil - Community Management"
+format: html
+---
+
+# Bienvenue
+
+Ce site documente mes activités en tant que **community manager** du laboratoire.
+
+Il regroupe :
+
+- 📢 Mes actions sur les **réseaux sociaux** (LinkedIn, Twitter, etc.)
+- 🌐 Les intégrations sur le **site web du laboratoire**
+- 📆 La **stratégie de communication** globale
