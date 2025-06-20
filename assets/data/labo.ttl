@@ -36,8 +36,13 @@ labo:idRubSpip a rdf:Property ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
+labo:idPublic a rdf:Property ;
+    rdfs:label "Identifiant publique de l'acteur" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
 labo:siteWeb a rdf:Property ;
-    rdfs:label "Url du site Web" ;
+    rdfs:label "URL du site Web" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
@@ -51,3 +56,14 @@ labo:hasLaboratoire a rdf:Property ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
+labo:dateSoutenance a rdf:Property ;
+    rdfs:label "Date de soutenance" ;
+    rdfs:domain labo:Doctorant ;
+    rdfs:range xsd:date ;
+    vs:term_status "experimental" .
+
+labo:hasThAdvisor a rdf:Property ;
+    rdfs:label "A comme directeur de thèse" ;
+    rdfs:domain o:Resource ;
+    rdfs:range labo:EnseignantChercheur ;
+    vs:term_status "experimental" .
