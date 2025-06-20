@@ -7,6 +7,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#>.
 @prefix labo: <https://jardindesconnaissances.univ-paris8.fr/onto/labo#> .
+@prefix orga: <https://jardindesconnaissances.univ-paris8.fr/onto/labo#> .
+
 
 <https://jardindesconnaissances.univ-paris8.fr/onto/labo#> a owl:Ontology ;
     dcterms:title "Laboratoire" .
