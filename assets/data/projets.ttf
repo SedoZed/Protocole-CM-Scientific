@@ -1,1 +1,93 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix o: <http://omeka.org/s/vocabs/o#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#>.
+@prefix proj: <https://jardindesconnaissances.univ-paris8.fr/onto/proj#> .
+
+
+<https://jardindesconnaissances.univ-paris8.fr/onto/labo#> a owl:Ontology ;
+    dcterms:title "Projets" .
+
+labo:Laboratoire a rdfs:Class ;
+    rdfs:label "Laboratoire" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:EnseigantChercheur a rdfs:Class ;
+    rdfs:label "Enseignant chercheur" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:Associe a rdfs:Class ;
+    rdfs:label "Associé" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:Organisme a rdfs:Class ;
+    rdfs:label "Organisme" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:Doctorant a rdfs:Class ;
+    rdfs:label "Doctorant" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:idRubSpip a rdf:Property ;
+    rdfs:label "Identifiant de rubrique SPIP (si disponible sur le site du labo)" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:idRubWP a rdf:Property ;
+    rdfs:label "Idenfifiant de rubrique WordPress (si disponible sur le site du labo)" :
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:idPublic a rdf:Property ;
+    rdfs:label "Identifiant publique de l'acteur" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:siteWeb a rdf:Property ;
+    rdfs:label "URL d'un site WEB" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:axe a rdf:Property ;
+    rdfs:label "Secteur d'activité de l'acteur"
+    rdfs:domaine o:Resource ;
+    vs:term_status "experimental" .
+
+
+
+labo:hasProjet a rdf:Property;
+    rdfs:label "Porte comme projet" ;
+    rdfs:label o:Resource ;
+    vs:term_status "experimental" .
+
+labo:hasDoctorant a rdf:Property ;
+    rdfs:label "A comme doctorant" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:hasLaboratoire a rdf:Property ;
+    rdfs:label "A comme laboratoire" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:dateSoutenance a rdf:Property ;
+    rdfs:label "Date de soutenance" ;
+    rdfs:domain labo:Doctorant ;
+    rdfs:range xsd:date ;
+    vs:term_status "experimental" .
+
+labo:hasThAdvisor a rdf:Property ;
+    rdfs:label "A comme directeur de thèse" ;
+    rdfs:domain o:Resource ;
+    rdfs:range labo:EnseignantChercheur ;
+    vs:term_status "experimental" .
 
