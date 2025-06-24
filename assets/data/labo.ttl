@@ -7,7 +7,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#>.
 @prefix labo: <https://jardindesconnaissances.univ-paris8.fr/onto/labo#> .
-@prefix orga: <https://jardindesconnaissances.univ-paris8.fr/onto/labo#> .
 
 
 <https://jardindesconnaissances.univ-paris8.fr/onto/labo#> a owl:Ontology ;
@@ -23,8 +22,13 @@ labo:EnseigantChercheur a rdfs:Class ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
-labo:Partenaire a rdfs:Class ;
-    rdfs:label "Partenaire" ;
+labo:Associe a rdfs:Class ;
+    rdfs:label "Associé" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:Organisme a rdfs:Class ;
+    rdfs:label "Organisme" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
@@ -34,7 +38,12 @@ labo:Doctorant a rdfs:Class ;
     vs:term_status "experimental" .
 
 labo:idRubSpip a rdf:Property ;
-    rdfs:label "Identifiant de rubrique SPIP" ;
+    rdfs:label "Identifiant de rubrique SPIP (si disponible sur le site du labo)" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:idRubWP a rdf:Property ;
+    rdfs:label "Idenfifiant de rubrique WordPress (si disponible sur le site du labo)" :
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
@@ -44,8 +53,20 @@ labo:idPublic a rdf:Property ;
     vs:term_status "experimental" .
 
 labo:siteWeb a rdf:Property ;
-    rdfs:label "URL du site Web" ;
+    rdfs:label "URL d'un site WEB" ;
     rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:axe a rdf:Property ;
+    rdfs:label "Secteur d'activité de l'acteur"
+    rdfs:domaine o:Resource ;
+    vs:term_status "experimental" .
+
+
+
+labo:hasProjet a rdf:Property;
+    rdfs:label "Porte comme projet" ;
+    rdfs:label o:Resource ;
     vs:term_status "experimental" .
 
 labo:hasDoctorant a rdf:Property ;
