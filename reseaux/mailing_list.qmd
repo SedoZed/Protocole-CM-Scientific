@@ -1,0 +1,6 @@
+---
+title: "Accueil - Gestion numérique d'un laboratoire"
+format: html
+---
+
+Comment mettre efficacement au point un service de mailing list 

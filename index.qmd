@@ -1,14 +1,30 @@
 ---
-title: "Accueil - Community Management"
+title: "Accueil - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-# Bienvenue
+# Documentation des activités de Community Management d'un laboratoire
 
-Ce site documente mes activités en tant que **community manager** du laboratoire.
+## Introduction
+Au sein de l'université, il a été constaté auprès de nombreuses équipes (laboratoire, BU, ...) faisaient face à un manque de moyen pour aborder les divers enjeux liés à la communication numérique ou à la gestion des datas. Par exemple, le webmastering n'est assuré que par une seule équipe pour toute l'université (qui ne peut pas être sur tous les fronts malheureusement) et la présence sur certaines plateformes de communication est tout simplement négligée, questionnant parfois certains acteurs externe. 
 
-Il regroupe :
+Fort de ce constat, le Laboratoire Paragraphe a émis une offre de stage avec comme vocation d'expérimenter dans l'espoir de trouver une solution à ces problèmes qui pourrait ensuite être étendue à d'autres instances de l'unviersité.  
 
-- 📢 Mes actions sur les **réseaux sociaux** (LinkedIn, Twitter, etc.)
-- 🌐 Les intégrations sur le **site web du laboratoire**
-- 📆 La **stratégie de communication** globale
+### Les tâches attribuées au(x) stagiaire(s)
+Au cours du stage, le stagiaire se verra attribué de nombreuses casquettes, agissant sur de nombreux fronts plus ou moins prioritaires comme :
+
+1. Assistanat-webmastering, certainement la tâche prioritaire : *Mettre à jour les informations du site internet du laboratoire, en travaillant en collaboration avec l'équipe de webmastering de l'Université (SPIP, ...) ; Vérifier les informations présentes sur d'autres services (HAL, ...)* ; ...
+2. Mise en place d'une data-gestion efficace, exploitable à la fois par le labo comme par le ou les stagiaire(s) : *Créer et consolider des bases de données exploitables ; Penser des mécanismes de traitement automatique de ces données ; ...* 
+3. Community Management à destination d'une communauté scientifique : *Quelle stratégie suivre sur X plateforme ; gestion de mailing-list ; veille ; ...*
+
+## Liste des fiches
+Ce corpus de document a été créé en Markdown via l'extension pour VisualStudio Code "Quarto" et rendu accessible en ligne via un hébergement GitHub (redirections possibles via les hyperliens ci-dessous). De plus, l'intégralité des documents (excepté la présente page) sont conçus pour pouvoir être téléchargeables au format PDF afin d'être consultés.
+
+- Outils utilisés : [Introduction à SPIP](redir) ; [Introduction à Quarto](redir) ; [Note sur l'utilisation de l'IAG](redir)
+- Webmastering : [Gestion du site web](redir) ; [Intégration de documents sur la page du labo](redir)
+- Communication interne : [Mise en place d'une mailing list](redir) ; [Création de fiches à destination du personnel](redir)
+- Communication externe : [Réseaux Sociaux : LinkedIn](redir) ; [Gestion des informations HAL](redir)
+
+## Mentions légales
+
+[Insérer droits Creative Commons]

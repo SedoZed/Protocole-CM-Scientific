@@ -1,0 +1,6 @@
+---
+title: "Accueil - Gestion numérique d'un laboratoire"
+format: html
+---
+
+Note sur l'utilisation de l'IAG durant le stage par le ou les stagiaires.
