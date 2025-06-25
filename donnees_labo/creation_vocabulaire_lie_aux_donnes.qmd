@@ -1,0 +1,3 @@
+La méthode la plus simple : mettre quelques premiers jets d'idées (classes & propriétés) puis commencer à créer des ressources sur OMEKA = en faisant cela, d'autres idées interviennent -> Les noter pour en faire une MaJ du TTL par la suite.
+
+NOTE : Bien se renseigner sur le Dublin Core etc... pour ne pas créer des classes / des propriétés qui existent déjà

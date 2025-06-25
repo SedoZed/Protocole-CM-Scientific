@@ -1,0 +1,6 @@
+---
+title: "Accueil - Gestion numérique d'un laboratoire"
+format: html
+---
+
+Introduction à SPIP, utilisé pour la plupart des sites de laboratoire de Paris 8

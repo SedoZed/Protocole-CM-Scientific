@@ -1,0 +1,6 @@
+---
+title: "Accueil - Gestion numérique d'un laboratoire"
+format: html
+---
+
+Utile pour la création de document comme ceux-ci, ou pour faire des fiches de bons usages du numérique par le personnel

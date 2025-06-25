@@ -1,0 +1,6 @@
+---
+title: "Accueil - Gestion numérique d'un laboratoire"
+format: html
+---
+
+Parler de cet outil collaboratif
