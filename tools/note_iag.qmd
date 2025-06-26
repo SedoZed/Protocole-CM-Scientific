@@ -3,4 +3,18 @@ title: "Accueil - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-Note sur l'utilisation de l'IAG durant le stage par le ou les stagiaires.
+# Gestion numérique d'un laboratoire - Note sur l'utilisation de l'IA générative
+
+## Introduction
+
+## Liste des cas de figure
+
+### Aide à l'apprentissage ou l'utilisation de certains outils (Quarto, ...)
+Génération de templates, explication de fonctionnements de certains langages, ...
+
+### Construction d'un dataset - obtenir certaines informations
+Numéro de SIRET/SIREN ou s'il existe d'autres ID plus précis par exemple (ou si à l'inverse il y a des exceptions)
+
+### Se renseigner sur une stratégie éditoriale LinkedIn
+Peut servir à déblayer sommairement le sujet, mais nécessite approfondissement (observation, rencontres, ...)
+

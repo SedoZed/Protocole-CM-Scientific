@@ -8,7 +8,7 @@ format: html
 ## Introduction
 Au sein de l'université, il a été constaté auprès de nombreuses équipes (laboratoire, BU, ...) faisaient face à un manque de moyen pour aborder les divers enjeux liés à la communication numérique ou à la gestion des datas. Par exemple, le webmastering n'est assuré que par une seule équipe pour toute l'université (qui ne peut pas être sur tous les fronts malheureusement) et la présence sur certaines plateformes de communication est tout simplement négligée, questionnant parfois certains acteurs externe. 
 
-Fort de ce constat, le Laboratoire Paragraphe a émis une offre de stage avec comme vocation d'expérimenter dans l'espoir de trouver une solution à ces problèmes qui pourrait ensuite être étendue à d'autres instances de l'unviersité.  
+Fort de ce constat, le Laboratoire Paragraphe a émis une offre de stage avec pour vocation, en plus que de traiter des points précédents à l'échelle dudit laboratoire, d'expérimenter divers protocoles dans l'espoir de trouver une solution à ces problèmes qui pourrait ensuite être étendue à d'autres instances de l'unviersité.  
 
 ### Les tâches attribuées au(x) stagiaire(s)
 Au cours du stage, le stagiaire se verra attribué de nombreuses casquettes, agissant sur de nombreux fronts plus ou moins prioritaires comme :

@@ -3,4 +3,18 @@ title: "Gérer le site web - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-Blabla pourquoi mes documents ont disparus envie de CREVER
+# Gestion numérique d'un laboratoire - Remise à niveau du site internet
+
+## Introduction
+
+## Remise à niveau du point de vue de l'information
+
+### Travail de veille : identifier les informations susceptible d'être outdated
+
+### 
+
+### 
+
+## Remise à niveau du point de vue technique 
+
+### 

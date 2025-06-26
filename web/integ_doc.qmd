@@ -1,5 +1,29 @@
 ---
-title: "Accueil - Gestion numérique d'un laboratoire"
+title: "Intégration efficace d'un document - Gestion numérique d'un laboratoire"
 format: html
 ---
 
+# Gestion numérique d'un laboratoire - Intégration efficace d'un document
+
+## Introduction
+
+HCERES et toussa toussa
+
+## Travail de structuration du document
+
+### D'abord, du repérage
+Repérer les diverses parties & sous-parties = identifier ce qui sera un article ou une rubrique, notamment
+Repérer la structure hiérarchique des titres (t1, t2, ...) ainsi que des divers styles (pourquoi x élément en gras / en italique, ...)
+= Processus d'éditorialisation du document & d'appropriation de ce dernier (un document qui n'a pas été approprié en amont sera ensuite mal implémanté)
+
+### Ensuite, une première implémentation
+
+NOTE : Il est vivement conseillé de lire la [documentation sur SPIP](../tools/intro_spip.qmd) avant d'aller plus loin.
+
+Création des rubriques / sous-rubriques / articles
+Implémentation (à base de copier-coller) du textes dans les articles correspondant
+Intégration des divers éléments de style repérés précédemment
+
+### Enfin, l'adapter aux codes du web
+hypertextualisation, recoupage en plusieurs articles, ...
+NOTE conseil : Conserver une trace complète du document importée dans le site, c'est-à-dire création de nouveaux articles à chaque fois
