@@ -37,32 +37,20 @@ labo:Doctorant a rdfs:Class ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
-labo:idRubSpip a rdf:Property ;
-    rdfs:label "Identifiant de rubrique SPIP (si disponible sur le site du labo)" ;
+labo:idFlux a rdf:Property ;
+    rdfs:label "Identifiant dans le flux" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
-labo:idRubWP a rdf:Property ;
-    rdfs:label "Idenfifiant de rubrique WordPress (si disponible sur le site du labo)" :
+labo:urlFlux a rdf:Property ;
+    rdfs:label "Adresse URL du flux" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
-labo:idPublic a rdf:Property ;
-    rdfs:label "Identifiant publique de l'acteur" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
-
-labo:siteWeb a rdf:Property ;
-    rdfs:label "URL d'un site WEB" ;
-    rdfs:domain o:Resource ;
-    vs:term_status "experimental" .
-
-labo:axe a rdf:Property ;
-    rdfs:label "Secteur d'activité de l'acteur"
+labo:secteur a rdf:Property ;
+    rdfs:label "Secteur d'activité de l'acteur";
     rdfs:domaine o:Resource ;
     vs:term_status "experimental" .
-
-
 
 labo:hasProjet a rdf:Property;
     rdfs:label "Porte comme projet" ;
@@ -82,11 +70,11 @@ labo:hasLaboratoire a rdf:Property ;
 labo:dateSoutenance a rdf:Property ;
     rdfs:label "Date de soutenance" ;
     rdfs:domain labo:Doctorant ;
-    rdfs:range xsd:date ;
     vs:term_status "experimental" .
 
-labo:hasThAdvisor a rdf:Property ;
+labo:hasTheseAdvisor a rdf:Property ;
     rdfs:label "A comme directeur de thèse" ;
     rdfs:domain o:Resource ;
-    rdfs:range labo:EnseignantChercheur ;
     vs:term_status "experimental" .
+
+
