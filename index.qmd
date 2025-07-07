@@ -20,10 +20,24 @@ Au cours du stage, le stagiaire se verra attribué de nombreuses casquettes, agi
 ## Liste des fiches
 Ce corpus de document a été créé en Markdown via l'extension pour VisualStudio Code "Quarto" et rendu accessible en ligne via un hébergement GitHub (redirections possibles via les hyperliens ci-dessous). De plus, l'intégralité des documents (excepté la présente page) sont conçus pour pouvoir être téléchargeables au format PDF afin d'être consultés.
 
-- Outils utilisés : [Introduction à SPIP](redir) ; [Introduction à Quarto](redir) ; [Note sur l'utilisation de l'IAG](redir)
-- Webmastering : [Gestion du site web](redir) ; [Intégration de documents sur la page du labo](redir)
-- Communication interne : [Mise en place d'une mailing list](redir) ; [Création de fiches à destination du personnel](redir)
-- Communication externe : [Réseaux Sociaux : LinkedIn](redir) ; [Gestion des informations HAL](redir)
+- Outils utilisés : <- [Introduction à SPIP](/tools/intro_spip.qmd)
+- [Introduction à Quarto](/tools/intro_quarto.qmd)
+- [Introduction à Hypothesis](/tools/intro_hypothesis.qmd)
+- [Note sur l'utilisation de l'IAG](/tools/note_iag.qmd)
+
+
+- Webmastering : <- [Gestion du site web](/web/site_web.qmd)
+- [Intégration de documents sur la page du labo](/web/integ_doc.qmd)
+
+- Data-gestion : <- [Création de dataset](/donnees_labo/creation_data_exploitables.qmd)
+- [Création d'une interface d'exploitation des données](/donnees_labo/creation_vocabulaire_lie_aux_donnes.qmd)
+
+
+- Communication interne : <- [Mise en place d'une mailing list](/reseaux/mailing_list.qmd) ; 
+- [Création de fiches à destination du personnel](redir)
+
+- Communication externe : <- [Réseaux Sociaux : LinkedIn](/reseaux/linkedin.qmd)
+- [Gestion des informations HAL](redir)
 
 ## Mentions légales
 

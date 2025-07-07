@@ -3,4 +3,4 @@ title: "Accueil - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-Comment mettre efficacement au point un service de mailing list 
+Objectif : Créer une multitude de réseau de mailing list interne (enseignant-chercheur, profs, partenaires, ...). 
