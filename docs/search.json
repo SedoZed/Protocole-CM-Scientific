@@ -1,72 +1,177 @@
 [
   {
+    "objectID": "donnees_labo/creation_vocabulaire_lie_aux_donnes.html",
+    "href": "donnees_labo/creation_vocabulaire_lie_aux_donnes.html",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "La méthode la plus simple : mettre quelques premiers jets d’idées (classes & propriétés) puis commencer à créer des ressources sur OMEKA = en faisant cela, d’autres idées interviennent -&gt; Les noter pour en faire une MaJ du TTL par la suite.\nNOTE : Bien se renseigner sur le Dublin Core etc… pour ne pas créer des classes / des propriétés qui existent déjà\nCreation classe “source_reference_public”"
+  },
+  {
+    "objectID": "web/site_web.html",
+    "href": "web/site_web.html",
+    "title": "Gérer le site web - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Indispensable aujourd’hui pour tous les organismes, le site web est un élément primordial dans la communication d’une institution vers l’extérieur. Véritable vitrine des activités du laboratoire, le site est l’atout principal de ce dernier pour se valoriser dans le domaine scientifique. Cependant, cela peut aussi jouer en sa défaveur si celui-ci est mal géré, ternissant le prestige du laboratoire sur la scène scientifique.\n\n\n\n\n\n/** Début du stage, discuter avec membre du personnel (notamment tuteur de stage) pour présenter les points sur lesquelles le laboratoire a besoin d’aide + effectuer une visite approfondie du site public pour détecter certaines failles (infos manquantes, liens morts, …) **/\n\nAu démarrage du stage, un temps d’échange avec les membres du laboratoire, et notamment le tuteur, a permis de cerner les besoins prioritaires en matière de mise à jour du site. Cette première étape a été suivie d’une exploration systématique du site web public du laboratoire afin de repérer les contenus problématiques : informations manquantes, liens inactifs, pages vides, incohérences entre sections, etc. Un tableau de suivi a ensuite été mis en place pour recenser les éléments à corriger ou enrichir.\n\n\n\n/** Pour update les biographies des chercheurs ou des axes par exemple **/\n\nLa mise à jour d’un site repose également sur la qualité des informations collectées. Afin de compléter ou corriger les contenus existants (ex. : biographies de chercheurs, description des axes de recherche, actualités), un travail de prise de contact avec différents interlocuteurs a été engagé. Cela a impliqué d’envoyer des emails ciblés, parfois relancer, et organiser certaines discussions informelles pour obtenir les renseignements pertinents ou les documents manquants.\n\n\n\n/** Gros bloc de texte = non ; Penser à aérer le contenu le + possible **/\nTout comme de gros livres denses et mal présentés peuvent freiner voire repousser le lecteur, une information ou une page web mal éditorialisée sur le plan visuel peut constituer un frein significatif à la navigation sur le site. De longues pages de texte denses nuisent à la compréhension et à l’attention du lecteur. L’objectif a donc été de structurer les contenus en diverses parties voire en divers articles, d’insérer des titres et sous-titres explicites, d’aérer les paragraphes et, autant que possible, d’intégrer des éléments visuels (liens, images, documents téléchargeables) pour dynamiser la navigation.\n(exemples)\n\n\n\n\n\n\n/** Insertion/suggestion de nouveaux plugins, explication du fonctionnement du site, … **/\nLe site étant hébergé et géré en grande partie par les services numériques de l’université, une collaboration avec l’équipe technique a été nécessaire. Cette étape a permis de mieux comprendre le fonctionnement du CMS utilisé (ici SPIP), les marges de manœuvre possibles pour un intervenant extérieur, ainsi que les processus de validation pour chaque modification. Des propositions d’amélioration ont pu être faites, comme par exemple avec l’intégration de nouveaux plugins permettant la communication entre l’API de HAL et le site du laboratoire.\n\n\n\nUne fois à l’aise avec l’architecture du site et l’usage de SPIP, un travail d’hypertextualisation a été amorcé. Il s’agissait ici de renforcer la cohérence interne du site en ajoutant des liens entre pages, en reliant les contenus entre eux (par exemple : projets ↔︎ publications ↔︎ membres), et en facilitant la navigation via des liens contextuels. Ce travail améliore considérablement l’expérience utilisateur et donne une image plus dynamique du laboratoire."
+  },
+  {
+    "objectID": "web/site_web.html#introduction",
+    "href": "web/site_web.html#introduction",
+    "title": "Gérer le site web - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Indispensable aujourd’hui pour tous les organismes, le site web est un élément primordial dans la communication d’une institution vers l’extérieur. Véritable vitrine des activités du laboratoire, le site est l’atout principal de ce dernier pour se valoriser dans le domaine scientifique. Cependant, cela peut aussi jouer en sa défaveur si celui-ci est mal géré, ternissant le prestige du laboratoire sur la scène scientifique."
+  },
+  {
+    "objectID": "web/site_web.html#remise-à-niveau-du-point-de-vue-de-linformation",
+    "href": "web/site_web.html#remise-à-niveau-du-point-de-vue-de-linformation",
+    "title": "Gérer le site web - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "/** Début du stage, discuter avec membre du personnel (notamment tuteur de stage) pour présenter les points sur lesquelles le laboratoire a besoin d’aide + effectuer une visite approfondie du site public pour détecter certaines failles (infos manquantes, liens morts, …) **/\n\nAu démarrage du stage, un temps d’échange avec les membres du laboratoire, et notamment le tuteur, a permis de cerner les besoins prioritaires en matière de mise à jour du site. Cette première étape a été suivie d’une exploration systématique du site web public du laboratoire afin de repérer les contenus problématiques : informations manquantes, liens inactifs, pages vides, incohérences entre sections, etc. Un tableau de suivi a ensuite été mis en place pour recenser les éléments à corriger ou enrichir.\n\n\n\n/** Pour update les biographies des chercheurs ou des axes par exemple **/\n\nLa mise à jour d’un site repose également sur la qualité des informations collectées. Afin de compléter ou corriger les contenus existants (ex. : biographies de chercheurs, description des axes de recherche, actualités), un travail de prise de contact avec différents interlocuteurs a été engagé. Cela a impliqué d’envoyer des emails ciblés, parfois relancer, et organiser certaines discussions informelles pour obtenir les renseignements pertinents ou les documents manquants.\n\n\n\n/** Gros bloc de texte = non ; Penser à aérer le contenu le + possible **/\nTout comme de gros livres denses et mal présentés peuvent freiner voire repousser le lecteur, une information ou une page web mal éditorialisée sur le plan visuel peut constituer un frein significatif à la navigation sur le site. De longues pages de texte denses nuisent à la compréhension et à l’attention du lecteur. L’objectif a donc été de structurer les contenus en diverses parties voire en divers articles, d’insérer des titres et sous-titres explicites, d’aérer les paragraphes et, autant que possible, d’intégrer des éléments visuels (liens, images, documents téléchargeables) pour dynamiser la navigation.\n(exemples)"
+  },
+  {
+    "objectID": "web/site_web.html#remise-à-niveau-du-point-de-vue-technique",
+    "href": "web/site_web.html#remise-à-niveau-du-point-de-vue-technique",
+    "title": "Gérer le site web - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "/** Insertion/suggestion de nouveaux plugins, explication du fonctionnement du site, … **/\nLe site étant hébergé et géré en grande partie par les services numériques de l’université, une collaboration avec l’équipe technique a été nécessaire. Cette étape a permis de mieux comprendre le fonctionnement du CMS utilisé (ici SPIP), les marges de manœuvre possibles pour un intervenant extérieur, ainsi que les processus de validation pour chaque modification. Des propositions d’amélioration ont pu être faites, comme par exemple avec l’intégration de nouveaux plugins permettant la communication entre l’API de HAL et le site du laboratoire.\n\n\n\nUne fois à l’aise avec l’architecture du site et l’usage de SPIP, un travail d’hypertextualisation a été amorcé. Il s’agissait ici de renforcer la cohérence interne du site en ajoutant des liens entre pages, en reliant les contenus entre eux (par exemple : projets ↔︎ publications ↔︎ membres), et en facilitant la navigation via des liens contextuels. Ce travail améliore considérablement l’expérience utilisateur et donne une image plus dynamique du laboratoire."
+  },
+  {
+    "objectID": "tools/note_iag.html",
+    "href": "tools/note_iag.html",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Génération de templates, explication de fonctionnements de certains langages, …\n\n\n\nNuméro de SIRET/SIREN ou s’il existe d’autres ID plus précis par exemple (ou si à l’inverse il y a des exceptions)\n\n\n\nPeut servir à déblayer sommairement le sujet, mais nécessite approfondissement (observation, rencontres, …)"
+  },
+  {
+    "objectID": "tools/note_iag.html#liste-des-cas-de-figure",
+    "href": "tools/note_iag.html#liste-des-cas-de-figure",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Génération de templates, explication de fonctionnements de certains langages, …\n\n\n\nNuméro de SIRET/SIREN ou s’il existe d’autres ID plus précis par exemple (ou si à l’inverse il y a des exceptions)\n\n\n\nPeut servir à déblayer sommairement le sujet, mais nécessite approfondissement (observation, rencontres, …)"
+  },
+  {
+    "objectID": "tools/intro_quarto.html",
+    "href": "tools/intro_quarto.html",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Utile pour la création de document comme ceux-ci, ou pour faire des fiches de bons usages du numérique par le personnel"
+  },
+  {
+    "objectID": "reseaux/mailing_list.html",
+    "href": "reseaux/mailing_list.html",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Objectif : Créer une multitude de réseau de mailing list interne (enseignant-chercheur, profs, partenaires, …)."
+  },
+  {
+    "objectID": "donnees_labo/creation_data_exploitables.html",
+    "href": "donnees_labo/creation_data_exploitables.html",
+    "title": "Datasets - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Objectif : recouper de nombreuses informations pouvant être éparpillées et en faire un dataset lisible pour les machines\n\n\n\nD SPIP = Une fois connecté, sur la page web en haut à droite, il est inscrit “rubrique(x)”. L’ID à récupérer est donc ici\nInstallation de serveurs OMK / phpmyadmin\nNormalisation choisie par exemple pour notre “public ID” : -&gt; Se renseigner sur les diverses façon de decrire les acteurs (après les avoir définis) = préciser que ce travail est important (dans le protocole) -&gt; Pour enseignants chercheurs : id_hal -&gt; Pour laboratoires : NumNatStruct (ministère enseignement) -&gt; Sur le site de -&gt; Pour université : Code UAI (https://referentiel.apprentissage.onisep.fr/organismes) = Déterminer un autre type d’indentifant pour les universités étrangères (exemple avec une université québécoise, avec le CEC pour “Code Etablissement Canada”, nom pas officiel mais qui regroupe les codes administratifs d’universités au Québec) ; Quand il est question d’UFR ou de facultés, quand même mentionner l’UAI de l’Université (cf. Faculté Société et Humanité -&gt; Université Paris-Cité) -&gt; data.gouv.fr -&gt; Entreprise privées : Référentiel des entreprises (SIREN ou SIRET en fonction de la précision (établissement ou entité entière)) -&gt; Maison d’édition (éventuellement) : data.bnf.fr (identifiant ARK) sinon SIREN/SIRET -&gt; Etablissements médico-sociaux : N° FINESS -&gt; Ministère : SIREN/SIRET -&gt; Associations : SIREN/SIRET (pour associations dite “d’utilité publique”) ou RNA (pour associations de type loi 1901)\nCatégories \"axes\" et \"axes secondaires\"\n-&gt; Pour les organismes, constitue d'abord le type d'organisme (médical, ...) puis d'éventuels détails (domaine d'activité pour une entreprise, par exemple NOTE : possibilité d'utiliser CODE NAF pour universaliser ?)\n\nFaire ressortir des informations en les observant : \"Certaines instances ressortent en analysant ces donnée (pays, organismes, ...)\"\n-&gt; Base de contextualisation : Temps & géographie (zone géographique financeur, projet, ...) & sujet (projet) \"Le projet X a comme financeur géographique X_pays (prédicat) de X date\"\nDe cela faire émerger onthologie\n\n\nPurification des données pour les rendre plus exploitable, via des conventions au niveau des séparateurs, ...\n\nNote pour le service de valorisation : faire en sorte de donner des infos d'identification précise sur l'organisme\n\nQuelques conventions : DATE = AAAA/MM/JJ\nIdentifiant projet : \n\n\nPourquoi c'est important : Créer une bdd type objet permet une exploitation fiable\n\nObjectivation :  transformation de données en objet / création d'un vocabulaire."
+  },
+  {
+    "objectID": "donnees_labo/creation_data_exploitables.html#introduction",
+    "href": "donnees_labo/creation_data_exploitables.html#introduction",
+    "title": "Datasets - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Objectif : recouper de nombreuses informations pouvant être éparpillées et en faire un dataset lisible pour les machines"
+  },
+  {
+    "objectID": "donnees_labo/creation_data_exploitables.html#protocole",
+    "href": "donnees_labo/creation_data_exploitables.html#protocole",
+    "title": "Datasets - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "D SPIP = Une fois connecté, sur la page web en haut à droite, il est inscrit “rubrique(x)”. L’ID à récupérer est donc ici\nInstallation de serveurs OMK / phpmyadmin\nNormalisation choisie par exemple pour notre “public ID” : -&gt; Se renseigner sur les diverses façon de decrire les acteurs (après les avoir définis) = préciser que ce travail est important (dans le protocole) -&gt; Pour enseignants chercheurs : id_hal -&gt; Pour laboratoires : NumNatStruct (ministère enseignement) -&gt; Sur le site de -&gt; Pour université : Code UAI (https://referentiel.apprentissage.onisep.fr/organismes) = Déterminer un autre type d’indentifant pour les universités étrangères (exemple avec une université québécoise, avec le CEC pour “Code Etablissement Canada”, nom pas officiel mais qui regroupe les codes administratifs d’universités au Québec) ; Quand il est question d’UFR ou de facultés, quand même mentionner l’UAI de l’Université (cf. Faculté Société et Humanité -&gt; Université Paris-Cité) -&gt; data.gouv.fr -&gt; Entreprise privées : Référentiel des entreprises (SIREN ou SIRET en fonction de la précision (établissement ou entité entière)) -&gt; Maison d’édition (éventuellement) : data.bnf.fr (identifiant ARK) sinon SIREN/SIRET -&gt; Etablissements médico-sociaux : N° FINESS -&gt; Ministère : SIREN/SIRET -&gt; Associations : SIREN/SIRET (pour associations dite “d’utilité publique”) ou RNA (pour associations de type loi 1901)\nCatégories \"axes\" et \"axes secondaires\"\n-&gt; Pour les organismes, constitue d'abord le type d'organisme (médical, ...) puis d'éventuels détails (domaine d'activité pour une entreprise, par exemple NOTE : possibilité d'utiliser CODE NAF pour universaliser ?)\n\nFaire ressortir des informations en les observant : \"Certaines instances ressortent en analysant ces donnée (pays, organismes, ...)\"\n-&gt; Base de contextualisation : Temps & géographie (zone géographique financeur, projet, ...) & sujet (projet) \"Le projet X a comme financeur géographique X_pays (prédicat) de X date\"\nDe cela faire émerger onthologie\n\n\nPurification des données pour les rendre plus exploitable, via des conventions au niveau des séparateurs, ...\n\nNote pour le service de valorisation : faire en sorte de donner des infos d'identification précise sur l'organisme\n\nQuelques conventions : DATE = AAAA/MM/JJ\nIdentifiant projet : \n\n\nPourquoi c'est important : Créer une bdd type objet permet une exploitation fiable\n\nObjectivation :  transformation de données en objet / création d'un vocabulaire."
+  },
+  {
+    "objectID": "communication/fiches_pdf.html",
+    "href": "communication/fiches_pdf.html",
+    "title": "Création de fiches usages - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Gestion numérique d’un laboratoire - Création de fiches de bons usages pour le personnel"
+  },
+  {
+    "objectID": "reseaux/linkedin.html",
+    "href": "reseaux/linkedin.html",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Mise au point d’une ligne éditoriale répétitive sur LinkedIn"
+  },
+  {
+    "objectID": "tools/intro_hypothesis.html",
+    "href": "tools/intro_hypothesis.html",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Parler de cet outil collaboratif"
+  },
+  {
+    "objectID": "tools/intro_spip.html",
+    "href": "tools/intro_spip.html",
+    "title": "Introduction à SPIP - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "A l’instar de WordPress, “SPIP” est un CMS (Content Management System) c’est-à-dire une interface permettant de créer, gérer et mettre à jour un site web sans avoir besoin de coder.\nAu sein de l’université Paris 8, le choix a été fait de se baser sur l’utilisation de SPIP. Cependant, il est important de noter que rien ne garantit que le site web de chacun des laboratoires ou de chacune des instances de l’université n’utilisent pas un autre CMS (ou même s’ils en utilisent un tout court).\n\n\n\nCompte doit être créé + accès VPN à l’université de Paris 8 (autrement impossible d’accéder à l’interface). Cette étape peut prendre du temps, donc est à initier dès le début du stage."
+  },
+  {
+    "objectID": "tools/intro_spip.html#introduction",
+    "href": "tools/intro_spip.html#introduction",
+    "title": "Introduction à SPIP - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "A l’instar de WordPress, “SPIP” est un CMS (Content Management System) c’est-à-dire une interface permettant de créer, gérer et mettre à jour un site web sans avoir besoin de coder.\nAu sein de l’université Paris 8, le choix a été fait de se baser sur l’utilisation de SPIP. Cependant, il est important de noter que rien ne garantit que le site web de chacun des laboratoires ou de chacune des instances de l’université n’utilisent pas un autre CMS (ou même s’ils en utilisent un tout court)."
+  },
+  {
+    "objectID": "tools/intro_spip.html#premier-accès-à",
+    "href": "tools/intro_spip.html#premier-accès-à",
+    "title": "Introduction à SPIP - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Compte doit être créé + accès VPN à l’université de Paris 8 (autrement impossible d’accéder à l’interface). Cette étape peut prendre du temps, donc est à initier dès le début du stage."
+  },
+  {
+    "objectID": "web/integ_doc.html",
+    "href": "web/integ_doc.html",
+    "title": "Intégration efficace d’un document - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "HCERES et toussa toussa\n\n\n\n\n\nRepérer les diverses parties & sous-parties = identifier ce qui sera un article ou une rubrique, notamment Repérer la structure hiérarchique des titres (t1, t2, …) ainsi que des divers styles (pourquoi x élément en gras / en italique, …) = Processus d’éditorialisation du document & d’appropriation de ce dernier (un document qui n’a pas été approprié en amont sera ensuite mal implémanté)\n\n\n\nNOTE : Il est vivement conseillé de lire la documentation sur SPIP avant d’aller plus loin.\nCréation des rubriques / sous-rubriques / articles Implémentation (à base de copier-coller) du textes dans les articles correspondant Intégration des divers éléments de style repérés précédemment\n\n\n\nhypertextualisation, recoupage en plusieurs articles, … NOTE conseil : Conserver une trace complète du document importée dans le site, c’est-à-dire création de nouveaux articles à chaque fois"
+  },
+  {
+    "objectID": "web/integ_doc.html#introduction",
+    "href": "web/integ_doc.html#introduction",
+    "title": "Intégration efficace d’un document - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "HCERES et toussa toussa"
+  },
+  {
+    "objectID": "web/integ_doc.html#travail-de-structuration-du-document",
+    "href": "web/integ_doc.html#travail-de-structuration-du-document",
+    "title": "Intégration efficace d’un document - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Repérer les diverses parties & sous-parties = identifier ce qui sera un article ou une rubrique, notamment Repérer la structure hiérarchique des titres (t1, t2, …) ainsi que des divers styles (pourquoi x élément en gras / en italique, …) = Processus d’éditorialisation du document & d’appropriation de ce dernier (un document qui n’a pas été approprié en amont sera ensuite mal implémanté)\n\n\n\nNOTE : Il est vivement conseillé de lire la documentation sur SPIP avant d’aller plus loin.\nCréation des rubriques / sous-rubriques / articles Implémentation (à base de copier-coller) du textes dans les articles correspondant Intégration des divers éléments de style repérés précédemment\n\n\n\nhypertextualisation, recoupage en plusieurs articles, … NOTE conseil : Conserver une trace complète du document importée dans le site, c’est-à-dire création de nouveaux articles à chaque fois"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Accueil - Community Management",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
     "section": "",
-    "text": "Bienvenue\nCe site documente mes activités en tant que community manager du laboratoire.\nIl regroupe :\n\n📢 Mes actions sur les réseaux sociaux (LinkedIn, Twitter, etc.)\n🌐 Les intégrations sur le site web du laboratoire\n📆 La stratégie de communication globale"
+    "text": "Au sein de l’université, il a été constaté auprès de nombreuses équipes (laboratoire, BU, …) faisaient face à un manque de moyen pour aborder les divers enjeux liés à la communication numérique ou à la gestion des datas. Par exemple, le webmastering n’est assuré que par une seule équipe pour toute l’université (qui ne peut pas être sur tous les fronts malheureusement) et la présence sur certaines plateformes de communication est tout simplement négligée, questionnant parfois certains acteurs externe.\nFort de ce constat, le Laboratoire Paragraphe a émis une offre de stage avec pour vocation, en plus que de traiter des points précédents à l’échelle dudit laboratoire, d’expérimenter divers protocoles dans l’espoir de trouver une solution à ces problèmes qui pourrait ensuite être étendue à d’autres instances de l’unviersité.\n\n\nAu cours du stage, le stagiaire se verra attribué de nombreuses casquettes, agissant sur de nombreux fronts plus ou moins prioritaires comme :\n\nAssistanat-webmastering, certainement la tâche prioritaire : Mettre à jour les informations du site internet du laboratoire, en travaillant en collaboration avec l’équipe de webmastering de l’Université (SPIP, …) ; Vérifier les informations présentes sur d’autres services (HAL, …) ; …\nMise en place d’une data-gestion efficace, exploitable à la fois par le labo comme par le ou les stagiaire(s) : Créer et consolider des bases de données exploitables ; Penser des mécanismes de traitement automatique de ces données ; …\nCommunity Management à destination d’une communauté scientifique : Quelle stratégie suivre sur X plateforme ; gestion de mailing-list ; veille ; …\n\n\n\n\n\nCe corpus de document a été créé en Markdown via l’extension pour VisualStudio Code “Quarto” et rendu accessible en ligne via un hébergement GitHub (redirections possibles via les hyperliens ci-dessous). De plus, l’intégralité des documents (excepté la présente page) sont conçus pour pouvoir être téléchargeables au format PDF afin d’être consultés.\n\nOutils utilisés : &lt;- Introduction à SPIP\nIntroduction à Quarto\nIntroduction à Hypothesis\nNote sur l’utilisation de l’IAG\nWebmastering : &lt;- Gestion du site web\nIntégration de documents sur la page du labo\nData-gestion : &lt;- Création de dataset\nCréation d’une interface d’exploitation des données\nCommunication interne : &lt;- Mise en place d’une mailing list ;\nCréation de fiches à destination du personnel\nCommunication externe : &lt;- Réseaux Sociaux : LinkedIn\nGestion des informations HAL\n\n\n\n\n[Insérer droits Creative Commons]"
   },
   {
-    "objectID": "web/rapports.html",
-    "href": "web/rapports.html",
-    "title": "Rapports en ligne",
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
     "section": "",
-    "text": "Les rapports mensuels sont exportés en HTML et intégrés au site.\n\n\n\nJanvier 2025 : rapport_2025_01.html\nFévrier 2025 : rapport_2025_02.html"
+    "text": "Au sein de l’université, il a été constaté auprès de nombreuses équipes (laboratoire, BU, …) faisaient face à un manque de moyen pour aborder les divers enjeux liés à la communication numérique ou à la gestion des datas. Par exemple, le webmastering n’est assuré que par une seule équipe pour toute l’université (qui ne peut pas être sur tous les fronts malheureusement) et la présence sur certaines plateformes de communication est tout simplement négligée, questionnant parfois certains acteurs externe.\nFort de ce constat, le Laboratoire Paragraphe a émis une offre de stage avec pour vocation, en plus que de traiter des points précédents à l’échelle dudit laboratoire, d’expérimenter divers protocoles dans l’espoir de trouver une solution à ces problèmes qui pourrait ensuite être étendue à d’autres instances de l’unviersité.\n\n\nAu cours du stage, le stagiaire se verra attribué de nombreuses casquettes, agissant sur de nombreux fronts plus ou moins prioritaires comme :\n\nAssistanat-webmastering, certainement la tâche prioritaire : Mettre à jour les informations du site internet du laboratoire, en travaillant en collaboration avec l’équipe de webmastering de l’Université (SPIP, …) ; Vérifier les informations présentes sur d’autres services (HAL, …) ; …\nMise en place d’une data-gestion efficace, exploitable à la fois par le labo comme par le ou les stagiaire(s) : Créer et consolider des bases de données exploitables ; Penser des mécanismes de traitement automatique de ces données ; …\nCommunity Management à destination d’une communauté scientifique : Quelle stratégie suivre sur X plateforme ; gestion de mailing-list ; veille ; …"
   },
   {
-    "objectID": "web/rapports.html#liste-des-rapports",
-    "href": "web/rapports.html#liste-des-rapports",
-    "title": "Rapports en ligne",
+    "objectID": "index.html#liste-des-fiches",
+    "href": "index.html#liste-des-fiches",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
     "section": "",
-    "text": "Janvier 2025 : rapport_2025_01.html\nFévrier 2025 : rapport_2025_02.html"
+    "text": "Ce corpus de document a été créé en Markdown via l’extension pour VisualStudio Code “Quarto” et rendu accessible en ligne via un hébergement GitHub (redirections possibles via les hyperliens ci-dessous). De plus, l’intégralité des documents (excepté la présente page) sont conçus pour pouvoir être téléchargeables au format PDF afin d’être consultés.\n\nOutils utilisés : &lt;- Introduction à SPIP\nIntroduction à Quarto\nIntroduction à Hypothesis\nNote sur l’utilisation de l’IAG\nWebmastering : &lt;- Gestion du site web\nIntégration de documents sur la page du labo\nData-gestion : &lt;- Création de dataset\nCréation d’une interface d’exploitation des données\nCommunication interne : &lt;- Mise en place d’une mailing list ;\nCréation de fiches à destination du personnel\nCommunication externe : &lt;- Réseaux Sociaux : LinkedIn\nGestion des informations HAL"
   },
   {
-    "objectID": "strategie/calendrier.html",
-    "href": "strategie/calendrier.html",
-    "title": "Calendrier éditorial",
+    "objectID": "index.html#mentions-légales",
+    "href": "index.html#mentions-légales",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
     "section": "",
-    "text": "Calendrier\nVoici le calendrier prévisionnel de publication :\n\nlibrary(readr)\nplanning &lt;- read_csv(\"data/planning.csv\")\n\nRows: 3 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (2): Canal, Contenu\ndate (1): Date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nprint(planning)\n\n# A tibble: 3 × 3\n  Date       Canal    Contenu                        \n  &lt;date&gt;     &lt;chr&gt;    &lt;chr&gt;                          \n1 2025-05-01 LinkedIn Annonce de l'article sur les IA\n2 2025-05-08 Twitter  Citation du jour + lien article\n3 2025-05-15 Site Web Nouveau rapport mensuel"
-  },
-  {
-    "objectID": "web/integration.html",
-    "href": "web/integration.html",
-    "title": "Intégration Web",
-    "section": "",
-    "text": "# Exemple d'intégration via iframe\ncat('&lt;iframe src=\"https://monlabo.org/rapport2025.html\" width=\"100%\" height=\"500px\"&gt;&lt;/iframe&gt;')\n\n&lt;iframe src=\"https://monlabo.org/rapport2025.html\" width=\"100%\" height=\"500px\"&gt;&lt;/iframe&gt;\n\n\n\n\n\n\nQuarto pour le rendu\nGit + Netlify pour la mise en ligne (optionnel)"
-  },
-  {
-    "objectID": "web/integration.html#rapport-intégré",
-    "href": "web/integration.html#rapport-intégré",
-    "title": "Intégration Web",
-    "section": "",
-    "text": "# Exemple d'intégration via iframe\ncat('&lt;iframe src=\"https://monlabo.org/rapport2025.html\" width=\"100%\" height=\"500px\"&gt;&lt;/iframe&gt;')\n\n&lt;iframe src=\"https://monlabo.org/rapport2025.html\" width=\"100%\" height=\"500px\"&gt;&lt;/iframe&gt;"
-  },
-  {
-    "objectID": "web/integration.html#outils-utilisés",
-    "href": "web/integration.html#outils-utilisés",
-    "title": "Intégration Web",
-    "section": "",
-    "text": "Quarto pour le rendu\nGit + Netlify pour la mise en ligne (optionnel)"
-  },
-  {
-    "objectID": "reseaux/twitter.html",
-    "href": "reseaux/twitter.html",
-    "title": "Gestion Twitter",
-    "section": "",
-    "text": "Couverture des événements en direct\nRelais d’informations scientifiques\nInteraction avec la communauté\n\n\n\n\n\nNombre de retweets\nClics sur les liens\nNouveaux abonnés"
-  },
-  {
-    "objectID": "reseaux/twitter.html#objectifs",
-    "href": "reseaux/twitter.html#objectifs",
-    "title": "Gestion Twitter",
-    "section": "",
-    "text": "Couverture des événements en direct\nRelais d’informations scientifiques\nInteraction avec la communauté"
-  },
-  {
-    "objectID": "reseaux/twitter.html#métriques-suivies",
-    "href": "reseaux/twitter.html#métriques-suivies",
-    "title": "Gestion Twitter",
-    "section": "",
-    "text": "Nombre de retweets\nClics sur les liens\nNouveaux abonnés"
+    "text": "[Insérer droits Creative Commons]"
   }
 ]
