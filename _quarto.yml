@@ -3,25 +3,42 @@ project:
   output-dir: docs
 
 website:
-  title: "Activités Community Manager"
+  title: "Gestion numérique d'un laboratoire"
   navbar:
     left:
       - href: index.qmd
         text: "Accueil"
-      - text: "Réseaux Sociaux"
+      - text: "Communication interne/externe"
         menu:
           - href: reseaux/linkedin.qmd
             text: "LinkedIn"
-          - href: reseaux/twitter.qmd
-            text: "Twitter"
-      - text: "Web"
+          - href: reseaux/mailing_list.qmd
+            text: "Gestion d'une mailing list"
+          - href: communication/fiches.qmd
+            text: "Fiches de bons usages"
+      - text: "Gestion web"
         menu:
-          - href: web/integration.qmd
-            text: "Intégration"
-          - href: web/rapports.qmd
-            text: "Rapports"
-      - href: strategie/calendrier.qmd
-        text: "Stratégie"
+          - href: web/site_web.qmd
+            text: "Gestion du site web"
+          - href: web/integ_doc.qmd
+            text: "Intégration de documents"
+      - text: "Outils utilisés"
+        menu: 
+        - href: tools/intro_spip.qmd
+          text: "Intro à SPIP"
+        - href: tools/intro_quarto.qmd
+          text: "Intro à Quarto"
+        - href: tools/intro_hypothesis.qmd
+          text: "Intro à Hypothesis"
+        - href: tools/note_iag.qmd
+          text: "Note sur l'usage de l'Intelligence Artificielle"
+      - text: "Data-gestion"
+        menu:
+          - href: donnees_labo/creation_data_exploitables.qmd
+            text: "Création de données exploitables"
+          - href: donnees_labo/creation_vocabulaire_lie_aux_donnees.qmd
+            text: "Plan de gestion des données"
+
 
 format:
   html:
