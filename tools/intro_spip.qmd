@@ -1,6 +1,10 @@
 ---
-title: "Accueil - Gestion numérique d'un laboratoire"
+title: "Introduction à SPIP - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-Introduction à SPIP, utilisé pour la plupart des sites de laboratoire de Paris 8
+# Gestion numérique d'un laboratoire - Introduction à SPIP
+
+## Introduction
+
+A l'instar de WordPress, "SPIP" est un CMS (*Content Management System*) c'est-à-dire une interface permettant de créer, gérer et mettre à jour un site web sans avoir besoin de coder. 

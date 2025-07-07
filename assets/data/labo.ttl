@@ -62,8 +62,6 @@ labo:axe a rdf:Property ;
     rdfs:domaine o:Resource ;
     vs:term_status "experimental" .
 
-
-
 labo:hasProjet a rdf:Property;
     rdfs:label "Porte comme projet" ;
     rdfs:label o:Resource ;
