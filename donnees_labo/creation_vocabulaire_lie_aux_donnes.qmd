@@ -1,6 +1,7 @@
 ---
 title: "Accueil - Gestion numérique d'un laboratoire"
 format: html
+lang: fr
 ---
 
 

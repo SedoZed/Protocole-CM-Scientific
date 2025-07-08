@@ -1,10 +1,31 @@
 [
   {
-    "objectID": "donnees_labo/creation_vocabulaire_lie_aux_donnes.html",
-    "href": "donnees_labo/creation_vocabulaire_lie_aux_donnes.html",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Accueil - Gestion numérique d’un laboratoire",
     "section": "",
-    "text": "La méthode la plus simple : mettre quelques premiers jets d’idées (classes & propriétés) puis commencer à créer des ressources sur OMEKA = en faisant cela, d’autres idées interviennent -&gt; Les noter pour en faire une MaJ du TTL par la suite.\nNOTE : Bien se renseigner sur le Dublin Core etc… pour ne pas créer des classes / des propriétés qui existent déjà\nCreation classe “source_reference_public”"
+    "text": "Au sein de l’université, il a été constaté auprès de nombreuses équipes (laboratoire, BU, …) faisaient face à un manque de moyen pour aborder les divers enjeux liés à la communication numérique ou à la gestion des datas. Par exemple, le webmastering n’est assuré que par une seule équipe pour toute l’université (qui ne peut pas être sur tous les fronts malheureusement) et la présence sur certaines plateformes de communication est tout simplement négligée, questionnant parfois certains acteurs externe.\nFort de ce constat, le Laboratoire Paragraphe a émis une offre de stage avec pour vocation, en plus que de traiter des points précédents à l’échelle dudit laboratoire, d’expérimenter divers protocoles dans l’espoir de trouver une solution à ces problèmes qui pourrait ensuite être étendue à d’autres instances de l’unviersité.\n\n\nAu cours du stage, le stagiaire se verra attribué de nombreuses casquettes, agissant sur de nombreux fronts plus ou moins prioritaires comme :\n\nAssistanat-webmastering, certainement la tâche prioritaire : Mettre à jour les informations du site internet du laboratoire, en travaillant en collaboration avec l’équipe de webmastering de l’Université (SPIP, …) ; Vérifier les informations présentes sur d’autres services (HAL, …) ; …\nMise en place d’une data-gestion efficace, exploitable à la fois par le labo comme par le ou les stagiaire(s) : Créer et consolider des bases de données exploitables ; Penser des mécanismes de traitement automatique de ces données ; …\nCommunity Management à destination d’une communauté scientifique : Quelle stratégie suivre sur X plateforme ; gestion de mailing-list ; veille ; …\n\n\n\n\n\nCe corpus de document a été créé en Markdown via l’extension pour VisualStudio Code “Quarto” et rendu accessible en ligne via un hébergement GitHub (redirections possibles via les hyperliens ci-dessous). De plus, l’intégralité des documents (excepté la présente page) sont conçus pour pouvoir être téléchargeables au format PDF afin d’être consultés.\n\n\n\nIntroduction à SPIP\nIntroduction à Quarto\nIntroduction à Hypothesis\nNote sur l’utilisation de l’IAG\n\n\n\n\n\nGestion du site web\nIntégration de documents sur la page du labo\n\n\n\n\n\nCréation de dataset\nCréation d’une interface d’exploitation des données\n\n\n\n\n\nRéseaux Sociaux : LinkedIn\nGestion des informations HAL\nMise en place d’une mailing list ;\nCréation de fiches à destination du personnel\n\n\n\n\n\n[Insérer droits Creative Commons]"
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Au sein de l’université, il a été constaté auprès de nombreuses équipes (laboratoire, BU, …) faisaient face à un manque de moyen pour aborder les divers enjeux liés à la communication numérique ou à la gestion des datas. Par exemple, le webmastering n’est assuré que par une seule équipe pour toute l’université (qui ne peut pas être sur tous les fronts malheureusement) et la présence sur certaines plateformes de communication est tout simplement négligée, questionnant parfois certains acteurs externe.\nFort de ce constat, le Laboratoire Paragraphe a émis une offre de stage avec pour vocation, en plus que de traiter des points précédents à l’échelle dudit laboratoire, d’expérimenter divers protocoles dans l’espoir de trouver une solution à ces problèmes qui pourrait ensuite être étendue à d’autres instances de l’unviersité.\n\n\nAu cours du stage, le stagiaire se verra attribué de nombreuses casquettes, agissant sur de nombreux fronts plus ou moins prioritaires comme :\n\nAssistanat-webmastering, certainement la tâche prioritaire : Mettre à jour les informations du site internet du laboratoire, en travaillant en collaboration avec l’équipe de webmastering de l’Université (SPIP, …) ; Vérifier les informations présentes sur d’autres services (HAL, …) ; …\nMise en place d’une data-gestion efficace, exploitable à la fois par le labo comme par le ou les stagiaire(s) : Créer et consolider des bases de données exploitables ; Penser des mécanismes de traitement automatique de ces données ; …\nCommunity Management à destination d’une communauté scientifique : Quelle stratégie suivre sur X plateforme ; gestion de mailing-list ; veille ; …"
+  },
+  {
+    "objectID": "index.html#liste-des-fiches",
+    "href": "index.html#liste-des-fiches",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Ce corpus de document a été créé en Markdown via l’extension pour VisualStudio Code “Quarto” et rendu accessible en ligne via un hébergement GitHub (redirections possibles via les hyperliens ci-dessous). De plus, l’intégralité des documents (excepté la présente page) sont conçus pour pouvoir être téléchargeables au format PDF afin d’être consultés.\n\n\n\nIntroduction à SPIP\nIntroduction à Quarto\nIntroduction à Hypothesis\nNote sur l’utilisation de l’IAG\n\n\n\n\n\nGestion du site web\nIntégration de documents sur la page du labo\n\n\n\n\n\nCréation de dataset\nCréation d’une interface d’exploitation des données\n\n\n\n\n\nRéseaux Sociaux : LinkedIn\nGestion des informations HAL\nMise en place d’une mailing list ;\nCréation de fiches à destination du personnel"
+  },
+  {
+    "objectID": "index.html#mentions-légales",
+    "href": "index.html#mentions-légales",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "[Insérer droits Creative Commons]"
   },
   {
     "objectID": "web/site_web.html",
@@ -63,6 +84,20 @@
     "text": "Objectif : Créer une multitude de réseau de mailing list interne (enseignant-chercheur, profs, partenaires, …)."
   },
   {
+    "objectID": "donnees_labo/creation_vocabulaire_lie_aux_donnes.html",
+    "href": "donnees_labo/creation_vocabulaire_lie_aux_donnes.html",
+    "title": "Accueil - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "La méthode la plus simple : mettre quelques premiers jets d’idées (classes & propriétés) puis commencer à créer des ressources sur OMEKA = en faisant cela, d’autres idées interviennent -&gt; Les noter pour en faire une MaJ du TTL par la suite.\nNOTE : Bien se renseigner sur le Dublin Core etc… pour ne pas créer des classes / des propriétés qui existent déjà\nCreation classe “source_reference_public”"
+  },
+  {
+    "objectID": "communication/fiches_pdf.html",
+    "href": "communication/fiches_pdf.html",
+    "title": "Création de fiches usages - Gestion numérique d’un laboratoire",
+    "section": "",
+    "text": "Gestion numérique d’un laboratoire - Création de fiches de bons usages pour le personnel"
+  },
+  {
     "objectID": "donnees_labo/creation_data_exploitables.html",
     "href": "donnees_labo/creation_data_exploitables.html",
     "title": "Datasets - Gestion numérique d’un laboratoire",
@@ -82,13 +117,6 @@
     "title": "Datasets - Gestion numérique d’un laboratoire",
     "section": "",
     "text": "D SPIP = Une fois connecté, sur la page web en haut à droite, il est inscrit “rubrique(x)”. L’ID à récupérer est donc ici\nInstallation de serveurs OMK / phpmyadmin\nNormalisation choisie par exemple pour notre “public ID” : -&gt; Se renseigner sur les diverses façon de decrire les acteurs (après les avoir définis) = préciser que ce travail est important (dans le protocole) -&gt; Pour enseignants chercheurs : id_hal -&gt; Pour laboratoires : NumNatStruct (ministère enseignement) -&gt; Sur le site de -&gt; Pour université : Code UAI (https://referentiel.apprentissage.onisep.fr/organismes) = Déterminer un autre type d’indentifant pour les universités étrangères (exemple avec une université québécoise, avec le CEC pour “Code Etablissement Canada”, nom pas officiel mais qui regroupe les codes administratifs d’universités au Québec) ; Quand il est question d’UFR ou de facultés, quand même mentionner l’UAI de l’Université (cf. Faculté Société et Humanité -&gt; Université Paris-Cité) -&gt; data.gouv.fr -&gt; Entreprise privées : Référentiel des entreprises (SIREN ou SIRET en fonction de la précision (établissement ou entité entière)) -&gt; Maison d’édition (éventuellement) : data.bnf.fr (identifiant ARK) sinon SIREN/SIRET -&gt; Etablissements médico-sociaux : N° FINESS -&gt; Ministère : SIREN/SIRET -&gt; Associations : SIREN/SIRET (pour associations dite “d’utilité publique”) ou RNA (pour associations de type loi 1901)\nCatégories \"axes\" et \"axes secondaires\"\n-&gt; Pour les organismes, constitue d'abord le type d'organisme (médical, ...) puis d'éventuels détails (domaine d'activité pour une entreprise, par exemple NOTE : possibilité d'utiliser CODE NAF pour universaliser ?)\n\nFaire ressortir des informations en les observant : \"Certaines instances ressortent en analysant ces donnée (pays, organismes, ...)\"\n-&gt; Base de contextualisation : Temps & géographie (zone géographique financeur, projet, ...) & sujet (projet) \"Le projet X a comme financeur géographique X_pays (prédicat) de X date\"\nDe cela faire émerger onthologie\n\n\nPurification des données pour les rendre plus exploitable, via des conventions au niveau des séparateurs, ...\n\nNote pour le service de valorisation : faire en sorte de donner des infos d'identification précise sur l'organisme\n\nQuelques conventions : DATE = AAAA/MM/JJ\nIdentifiant projet : \n\n\nPourquoi c'est important : Créer une bdd type objet permet une exploitation fiable\n\nObjectivation :  transformation de données en objet / création d'un vocabulaire."
-  },
-  {
-    "objectID": "communication/fiches_pdf.html",
-    "href": "communication/fiches_pdf.html",
-    "title": "Création de fiches usages - Gestion numérique d’un laboratoire",
-    "section": "",
-    "text": "Gestion numérique d’un laboratoire - Création de fiches de bons usages pour le personnel"
   },
   {
     "objectID": "reseaux/linkedin.html",
@@ -145,33 +173,5 @@
     "title": "Intégration efficace d’un document - Gestion numérique d’un laboratoire",
     "section": "",
     "text": "Repérer les diverses parties & sous-parties = identifier ce qui sera un article ou une rubrique, notamment Repérer la structure hiérarchique des titres (t1, t2, …) ainsi que des divers styles (pourquoi x élément en gras / en italique, …) = Processus d’éditorialisation du document & d’appropriation de ce dernier (un document qui n’a pas été approprié en amont sera ensuite mal implémanté)\n\n\n\nNOTE : Il est vivement conseillé de lire la documentation sur SPIP avant d’aller plus loin.\nCréation des rubriques / sous-rubriques / articles Implémentation (à base de copier-coller) du textes dans les articles correspondant Intégration des divers éléments de style repérés précédemment\n\n\n\nhypertextualisation, recoupage en plusieurs articles, … NOTE conseil : Conserver une trace complète du document importée dans le site, c’est-à-dire création de nouveaux articles à chaque fois"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Accueil - Gestion numérique d’un laboratoire",
-    "section": "",
-    "text": "Au sein de l’université, il a été constaté auprès de nombreuses équipes (laboratoire, BU, …) faisaient face à un manque de moyen pour aborder les divers enjeux liés à la communication numérique ou à la gestion des datas. Par exemple, le webmastering n’est assuré que par une seule équipe pour toute l’université (qui ne peut pas être sur tous les fronts malheureusement) et la présence sur certaines plateformes de communication est tout simplement négligée, questionnant parfois certains acteurs externe.\nFort de ce constat, le Laboratoire Paragraphe a émis une offre de stage avec pour vocation, en plus que de traiter des points précédents à l’échelle dudit laboratoire, d’expérimenter divers protocoles dans l’espoir de trouver une solution à ces problèmes qui pourrait ensuite être étendue à d’autres instances de l’unviersité.\n\n\nAu cours du stage, le stagiaire se verra attribué de nombreuses casquettes, agissant sur de nombreux fronts plus ou moins prioritaires comme :\n\nAssistanat-webmastering, certainement la tâche prioritaire : Mettre à jour les informations du site internet du laboratoire, en travaillant en collaboration avec l’équipe de webmastering de l’Université (SPIP, …) ; Vérifier les informations présentes sur d’autres services (HAL, …) ; …\nMise en place d’une data-gestion efficace, exploitable à la fois par le labo comme par le ou les stagiaire(s) : Créer et consolider des bases de données exploitables ; Penser des mécanismes de traitement automatique de ces données ; …\nCommunity Management à destination d’une communauté scientifique : Quelle stratégie suivre sur X plateforme ; gestion de mailing-list ; veille ; …\n\n\n\n\n\nCe corpus de document a été créé en Markdown via l’extension pour VisualStudio Code “Quarto” et rendu accessible en ligne via un hébergement GitHub (redirections possibles via les hyperliens ci-dessous). De plus, l’intégralité des documents (excepté la présente page) sont conçus pour pouvoir être téléchargeables au format PDF afin d’être consultés.\n\nOutils utilisés : &lt;- Introduction à SPIP\nIntroduction à Quarto\nIntroduction à Hypothesis\nNote sur l’utilisation de l’IAG\nWebmastering : &lt;- Gestion du site web\nIntégration de documents sur la page du labo\nData-gestion : &lt;- Création de dataset\nCréation d’une interface d’exploitation des données\nCommunication interne : &lt;- Mise en place d’une mailing list ;\nCréation de fiches à destination du personnel\nCommunication externe : &lt;- Réseaux Sociaux : LinkedIn\nGestion des informations HAL\n\n\n\n\n[Insérer droits Creative Commons]"
-  },
-  {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Accueil - Gestion numérique d’un laboratoire",
-    "section": "",
-    "text": "Au sein de l’université, il a été constaté auprès de nombreuses équipes (laboratoire, BU, …) faisaient face à un manque de moyen pour aborder les divers enjeux liés à la communication numérique ou à la gestion des datas. Par exemple, le webmastering n’est assuré que par une seule équipe pour toute l’université (qui ne peut pas être sur tous les fronts malheureusement) et la présence sur certaines plateformes de communication est tout simplement négligée, questionnant parfois certains acteurs externe.\nFort de ce constat, le Laboratoire Paragraphe a émis une offre de stage avec pour vocation, en plus que de traiter des points précédents à l’échelle dudit laboratoire, d’expérimenter divers protocoles dans l’espoir de trouver une solution à ces problèmes qui pourrait ensuite être étendue à d’autres instances de l’unviersité.\n\n\nAu cours du stage, le stagiaire se verra attribué de nombreuses casquettes, agissant sur de nombreux fronts plus ou moins prioritaires comme :\n\nAssistanat-webmastering, certainement la tâche prioritaire : Mettre à jour les informations du site internet du laboratoire, en travaillant en collaboration avec l’équipe de webmastering de l’Université (SPIP, …) ; Vérifier les informations présentes sur d’autres services (HAL, …) ; …\nMise en place d’une data-gestion efficace, exploitable à la fois par le labo comme par le ou les stagiaire(s) : Créer et consolider des bases de données exploitables ; Penser des mécanismes de traitement automatique de ces données ; …\nCommunity Management à destination d’une communauté scientifique : Quelle stratégie suivre sur X plateforme ; gestion de mailing-list ; veille ; …"
-  },
-  {
-    "objectID": "index.html#liste-des-fiches",
-    "href": "index.html#liste-des-fiches",
-    "title": "Accueil - Gestion numérique d’un laboratoire",
-    "section": "",
-    "text": "Ce corpus de document a été créé en Markdown via l’extension pour VisualStudio Code “Quarto” et rendu accessible en ligne via un hébergement GitHub (redirections possibles via les hyperliens ci-dessous). De plus, l’intégralité des documents (excepté la présente page) sont conçus pour pouvoir être téléchargeables au format PDF afin d’être consultés.\n\nOutils utilisés : &lt;- Introduction à SPIP\nIntroduction à Quarto\nIntroduction à Hypothesis\nNote sur l’utilisation de l’IAG\nWebmastering : &lt;- Gestion du site web\nIntégration de documents sur la page du labo\nData-gestion : &lt;- Création de dataset\nCréation d’une interface d’exploitation des données\nCommunication interne : &lt;- Mise en place d’une mailing list ;\nCréation de fiches à destination du personnel\nCommunication externe : &lt;- Réseaux Sociaux : LinkedIn\nGestion des informations HAL"
-  },
-  {
-    "objectID": "index.html#mentions-légales",
-    "href": "index.html#mentions-légales",
-    "title": "Accueil - Gestion numérique d’un laboratoire",
-    "section": "",
-    "text": "[Insérer droits Creative Commons]"
   }
 ]
