@@ -4,18 +4,6 @@ try {
   require_once 'googleapi/vendor/autoload.php';
 
   $client = new Google\Client();
-    /*
-  $client->setApplicationName("Images Trompeuses");
-  $client->setDeveloperKey("AIzaSyAg88VtvmGKzaLLcNMZvjLhsoiaAXUtz6U");
-  */
-  /*
-  $client->setAuthConfig('assets/data/client_secret_799448019872-ll6ucvdkp0v37vtdt43d4ocq435hsgbc.apps.googleusercontent.com.json');
-  $client->addScope(Google\Service\Drive::DRIVE);
-  // Your redirect URI can be any registered URI, but in this example
-  // we redirect back to this same page
-  $redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  $client->setRedirectUri($redirect_uri);
-  */
   putenv('GOOGLE_APPLICATION_CREDENTIALS=assets/data/images-trompeuses-0e0da7ebf707.json');
   $client->useApplicationDefaultCredentials();
   $client->addScope(Google\Service\Drive::DRIVE);
