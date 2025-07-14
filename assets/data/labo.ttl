@@ -37,6 +37,11 @@ labo:Doctorant a rdfs:Class ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
+labo:etablissement a rdf:Property ;
+    rdfs:label "Etablissement de l'individu" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
 labo:idFlux a rdf:Property ;
     rdfs:label "Identifiant dans le flux" ;
     rdfs:domain o:Resource ;
