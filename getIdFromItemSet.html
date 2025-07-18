@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheet to OMK</title>
+    <script type="text/javascript" src="assets/js/d3.min.js"></script>
+    <script src="assets/js/bootstrap5.3.bundle.min.js" ></script>
+    <script src="assets/js/all.min.js" ></script>
+    <script src="assets/js/main.js"></script>
+
+    <link href="assets/css/bootstrap5.3.min.css" rel="stylesheet" >
+    <link href="assets/css/all.min.css" rel="stylesheet" >
+    <link href="assets/css/main.css" rel="stylesheet" >
+
+
+</head>
+<body> 
+    <body class="d-flex h-100 text-center text-white bg-dark">
+
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+
+            <header>
+                <div>
+   
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo-paragraphe-blanc.svg" alt="Logo" width="86"  class="d-inline-block align-text-top">
+                Get Id from Item Set
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="navbarMain" class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <input class="form-control" type="file" id="formFile">
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-sitemap"></i>
+                        <span id="selectExport">Choisir un itemset</span>    
+                    </a>
+                    <ul id="ddItemSet" class="dropdown-menu">
+                    </ul>
+                </li>    
+                <li class="nav-item">
+                    <a id="btnGetId" class="nav-link" href="#">
+                        <i class="fa-solid fa-gears"></i>
+                        <span >Calculer les ids</span>    
+                    </a>
+                </li>
+
+            </ul>
+      </div>
+</div>
+      </nav>
+
+    </div>
+</header>
+
+
+    <main id='mainContent' class="px-3 overflow-y-scroll">
+        <div class="container-fluid text-center">
+            <div id="cardsImagesTrompeuses" class="row row-cols-1 row-cols-md-2 g-4">
+            </div>    
+        </div>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+        <p style="padding-top: 6px;">Design by <a href="https://samszo.univ-paris8.fr/"
+                class="text-white">Samuel
+                Szoniecky</a>
+            <a target="_blank" href="https://www.univ-paris8.fr/EA-349-Laboratoire-Paragraphe">
+                <img style="height: 40px;" src="assets/img/logo-paragraphe-blanc.svg"
+                    alt="Laboratoire Paragraphe" />
+            </a>
+            <a target="_blank" href="https://github.com/samszo/HDR">
+                <button type="button" class="btn btn-danger">
+                    <i class="fa-brands fa-github fa-2xl"></i>
+                </button>
+            </a>
+            Template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
+                href="https://twitter.com/mdo" class="text-white">@mdo</a>.
+        </p>
+    </footer>
+
+</div>
+
+    
+    <div id="loading-container">
+        <div class="loadingio-spinner-double-ring-4dols36ufwg" id="ws-loading">
+            <div class="ldio-6pd26u1x99x">
+            <div></div>
+            <div></div>
+            <div><div></div></div>
+            <div><div></div></div>
+        </div></div>
+    </div>
+
+    <script type="module">
+        import {auth} from './modules/auth.js';
+        import {pa} from './modules/authParams.js';
+
+        let curwait=0, hot, a = new auth(pa), 
+        importMatrice = [
+            {'verifExist':'dcterms:identifier','o:resource_class':'fup8:Etudiant','o:resource_template':'Répondant','props':[
+                {'p':'dcterms:title','v':['Prénom','Nom']},
+                {'p':'foaf:firstName','v':'Prénom'},
+                {'p':'foaf:lastName','v':'Nom'},
+                {'p':'dcterms:identifier','v':'N° étudiant'},
+                {'p':'fup8:hasParcours','v':'Formation'},
+                {'p':'dcterms:educationLevel','v':'Niveau'},
+                {'p':'fup8:hasUniversity','v':'Établissement'},
+                {'p':'fup8:semestre','v':'Années scolaires'},
+                {'p':'fup8:hasEC','v':'Modules de cours'}
+                ]},
+            {'verifExist':'dcterms:identifier','o:resource_class':'bibo:Document','o:resource_template':'Image trompeuse','props':[
+                {'p':'dcterms:title','v':"Titre de l'image"},
+                {'p':'dcterms:format','v':'Format'},
+                {'p':'dcterms:medium','v':[{"prop":"Techniques",'multi':',','concept':true}]},
+                {'p':'dcterms:identifier','v':'Ajouter le fichier'},
+                {'p':"o:media",'v':'Ajouter le fichier'},
+                {'p':'dcterms:type','v':[{"prop":"Catégorie de l'image",'multi':',','concept':true}]},                
+                ]},
+            {'verifExist':'dcterms:identifier','o:resource_class':'bibo:Report','o:resource_template':'Analyse critique','props':[
+                {'p':'dcterms:title','v':[{'numItem':0,'prop':'dcterms:title'},{'numItem':1,'prop':'dcterms:title'}]},
+                {'p':'dcterms:description','v':"Description de l'image"},
+                {'p':'dcterms:identifier','v':[{'numItem':0,'prop':'o:id'},{'numItem':1,'prop':'o:id'},"Horodateur"]},
+                {'p':'fup8:hasEtudiant','v':[{'numItem':0,'prop':'o:id','resource':1}]},
+                {'p':'dcterms:source','v':[{'numItem':1,'prop':'o:id','resource':1}]},
+                {'p':'fup8:hasQuestion','v':[
+                    "@Justification du caractère trompeur de l'image",
+                    "@Analyse syntaxique",
+                    "@Analyse sémantique",
+                    "@Analyse pragmatique",
+                    "@Pourquoi et en quoi cette image est-elle trompeuse ?",
+                    "@Raisons de ce choix",
+                    "@Conclusion",
+                    "@Bilan",
+                ]},
+                {'p':'fup8:hasReponse','v':[
+                    "#Justification du caractère trompeur de l'image",
+                    "#Analyse syntaxique",
+                    "#Analyse sémantique",
+                    "#Analyse pragmatique",
+                    "#Pourquoi et en quoi cette image est-elle trompeuse ?",
+                    "#Raisons de ce choix",
+                    "#Conclusion",
+                    "#Bilan",
+                ]},
+                {'p':'dcterms:created','v':"Horodateur"},                
+                ]},
+            ];
+
+        a.getUser(u=>{
+            console.log(u);
+            a.omk.setItemSets(data=>{                                                
+                if(data.length){
+                    //récupère les item sets
+                    setMenu('#ddItemSet',data.map(d=>{
+                        return {
+                            'id':d['o:id'],
+                            'name':d['o:title'],
+                            'path':d['o:resource_url']
+                            };
+                        })
+                        ,'name',getItemSet);
+                }else{
+                    d3.select('#selectExport').html('Aucun item set trouvé');
+                    d3.select('#ddItemSet').remove();
+                }
+            });
+        });
+
+        function getItemSet(e,d){
+            return;
+            //récupère l'item set
+            d3.select('#selectExport').html(d.name);
+            d3.select('#mainContent').html('');
+            a.omk.getItemSet(d.id,items=>{
+                if(items.length){
+                    //récupère les items de l'item set
+                    setTable(items);
+                    d3.select('#btnGetId').on('click',()=>{showLoader();items.forEach((d,i)=>saveLineInOmk(d,i));});
+                }else{
+                    d3.select('#mainContent').html('<h2>Aucun item trouvé dans cet item set</h2>');
+                }
+            });
+        }
+
+        function setMenu(s,data,lbl,fct){
+            d3.select(s).selectAll('li').data(data)
+            .join(
+                enter => enter.append('li')
+                    .append('a').attr('class',"dropdown-item")
+                    .html(d=>d[lbl])
+                    .on('click',fct),
+                update => update.select('a').html(d=>d[lbl]),
+                exit => exit.remove()
+            );
+        }
+
+        
+
+        async function getSheetDoc(path){
+            //merci à https://davidwalsh.name/query-string-javascript
+            // https://developers.google.com/web/updates/2016/01/urlsearchparams?hl=en
+            let url = new URL(path),
+                urlParam = new URLSearchParams(url.search),
+                id = urlParam.get('id'),
+                //vérifie s'il faut exporter en pdf
+                pdf = await  getExportPdf(id);
+            //merci à https://stackoverflow.com/questions/50664868/get-pictures-from-google-drive-folder-with-javascript-to-my-website
+            return pdf == 'no'? "https://drive.google.com/uc?id="+id+"&export=download" : pdf;                        
+        }
+
+        async function saveLineInOmk(d,i){
+            let data, vals, val, items=[], item,
+                pMedia = false, create = true;
+            //récupère le document si besoin
+            importMatrice.forEach(m=>m.props.forEach(p=>{if(p.p=="o:media")pMedia=p;}));
+            if(pMedia){
+                d[pMedia.v] = await getSheetDoc(d[pMedia.v]);
+            }
+            for (let index = 0; index < importMatrice.length; index++) {
+                const imp = importMatrice[index];
+                data = {};
+                for (const p in imp) {
+                    if(p=='props'){
+                        imp[p].forEach(propval=>{
+                            vals = getPropVal(d, propval, items);
+                            for (const pv in vals) {
+                                data[pv]=vals[pv];
+                            }
+                        })
+                    }else if(p!='verifExist')
+                        data[p]=imp[p];
+                }
+                create=true;
+                if(imp.verifExist){
+                    let itemVerif = getItemByRef(imp,data);
+                    if(itemVerif.length){
+                        items.push(itemVerif[0]);
+                        create = false;
+                    }
+                }
+                if(create){
+                    //save data to omeka                
+                    await a.omk.createItem(data);
+                    item = getItemByRef(imp,data)[0];
+                    items.push(item);
+                }
+            }
+            showItems(items,i);
+
+        }
+
+        function getItemByRef(imp,data){
+            let pVerif = imp.props.filter(p=>p.p==imp.verifExist)[0],
+                vVerif = data[pVerif.p],
+                q = 'property[0][property]='
+                    +a.omk.getPropId(imp.verifExist)
+                    +'&property[0][type]=eq&property[0][text]='+encodeURIComponent(vVerif);                                                
+            return a.omk.searchItems(q);
+
+        }
+
+        function getPropVal(d, propval, items){
+            let val, data={};
+            if(Array.isArray(propval.v)){
+                val="";
+                propval.v.forEach((pp,num)=>{
+                    if(typeof pp === "object" && 'numItem' in pp){
+                        if(pp['prop']=='o:id')
+                            if(pp['resource']){
+                                if(!data[propval.p])data[propval.p]=[];
+                                data[propval.p].push({'rid':items[pp['numItem']][pp['prop']]});        
+                                val=false;
+                            }else
+                                val+=items[pp['numItem']][pp['prop']]+" ";
+                        else
+                            val+=items[pp['numItem']][pp['prop']][0]['@value']+" ";
+                    } else if (typeof pp === "object" && 'multi' in pp){
+                        if(!data[propval.p])data[propval.p]=[];
+                        d[pp.prop].split(pp.multi).forEach(v=>data[propval.p].push(v));
+                        val = false;
+                    }else if (pp.substring(0,1)=='@'){
+                        if(!data[propval.p])data[propval.p]=[];
+                        data[propval.p].push((num+1)+' - '+pp.substring(1));
+                        val = false;
+                    }
+                    else if (pp.substring(0,1)=='#'){
+                        if(!data[propval.p])data[propval.p]=[];
+                        data[propval.p].push((num+1)+' - '+d[pp.substring(1)]);
+                        val = false;
+                    }
+                    else val+=d[pp]
+                });
+                if(val){
+                    val = val.substring(0, val.length - 1);
+                    data[propval.p]=val;
+                }
+            }else
+                data[propval.p]=d[propval.v];
+            return data;
+        }
+        async function getExportPdf(id){
+            const response = await fetch("exportToPdf.php?id="+id);
+            const url = await response.text();
+            return url;
+        }
+
+        function showItems(items,i){
+            console.log(items);
+        }
+
+        function exportData(e,d){
+            showLoader();
+            switch (d.id) {
+                case 1:
+                    const exportPlugin = hot.getPlugin('exportFile');
+                    exportPlugin.downloadFile('csv', {
+                        bom: false,
+                        columnDelimiter: ',',
+                        columnHeaders: true,
+                        exportHiddenColumns: true,
+                        exportHiddenRows: true,
+                        fileExtension: 'csv',
+                        filename: 'githubStats_'+a.loginGitHub+'[YYYY]-[MM]-[DD]',
+                        mimeType: 'text/csv',
+                        rowDelimiter: '\r\n',
+                        rowHeaders: true
+                    });                    
+                    break;            
+                case 2:
+                    let mContrib = groups.contributors.map(c=>{
+                    return {
+                        'o:resource_class':'jdc:Actant',
+                        'dcterms:identifier':c.id,
+                        'foaf:account':c.login,
+                        'dcterms:title':'GitHub '+c.type+' : '+c.login,
+                        'schema:provider ^^resource':'GitHub',
+                        'foaf:accountServiceHomepage ^^uri':c.html_url,
+                        'Media url':c.avatar_url
+                        }
+                    });
+                    exportCSVFile(Object.keys(mContrib[0]),mContrib,'githubStats_'+a.loginGitHub+'_contributors');
+                break;            
+                case 4:
+                    let mLang = groups.langages.map(l=>{
+                    return {
+                        'o:resource_class':'skos:Concept',
+                        'skos:broader ^^resource':'72015|120165',
+                        'skos:prefLabel':l,
+                        'dcterms:title':l,
+                        }
+                    });
+                    exportCSVFile(Object.keys(mLang[0]),mLang,'githubStats_'+a.loginGitHub+'_langages');
+                break;            
+                case 3:
+                    let q, rs, nVals, nRow= {}, nData= [], gData = hot.getData(); 
+                    gData.forEach(d=>{
+                        //calcule les nouvelles valeurs
+                        nRow= {};
+                        configHeaders.forEach((ch,i)=>{
+                            if(ch.e==" ^^resource" && d[i]){
+                                //remplace les valeurs textes par les identifiant de resource omk
+                                switch (ch.lc) {
+                                    case 'schema:provider':
+                                        nRow[ch.lc+ch.e]=oidGitHub;    
+                                        break;
+                                    case 'bibo:contributorList':                                        
+                                        nVals = []
+                                        d[i].split('|').forEach(r=>{
+                                            if(!refs[r]){
+                                                    q = 'property[0][property]='
+                                                    +a.omk.getPropId('foaf:accountServiceHomepage')
+                                                    +'&property[0][type]=eq&property[0][text]=https://github.com/'+r;
+                                                rs = a.omk.searchItems(q);
+                                                if(rs){
+                                                    nVals.push(rs[0]['o:id']);
+                                                    refs[r]=rs[0]['o:id'];
+                                                }else{
+                                                    refs[r]=' ';
+                                                    console.log("pas d'identifiant dans omk : "+q);
+                                                }     
+                                            }else nVals.push(refs[r]);
+ 
+                                        });
+                                        nRow[ch.lc+ch.e]=nVals.join('|');    
+                                        break;
+                                    case 'schema:programmingLanguage':                                        
+                                        nVals = []
+                                        d[i].split('|').forEach(r=>{
+                                            if(!refs[r]){
+                                                    q = 'property[0][property]='+a.omk.getPropId('skos:altLabel')
+                                                    +'&property[0][type]=eq&property[0][text]='+r
+                                                    +'&property[1][property]='+a.omk.getPropId('skos:broader')
+                                                    +'&property[1][type]=res&property[1][text]=72015'
+                                                    +'&property[2][property]='+a.omk.getPropId('skos:broader')
+                                                    +'&property[2][type]=res&property[2][text]=120165';
+                                                rs = a.omk.searchItems(q);
+                                                if(rs.length){
+                                                    nVals.push(rs[0]['o:id']);
+                                                    refs[r]=rs[0]['o:id'];
+                                                }else{
+                                                    refs[r]=' ';
+                                                    console.log("pas d'identifiant dans omk : "+q);
+                                                }     
+                                            }else nVals.push(refs[r]);
+ 
+                                        });
+                                        nRow[ch.lc+ch.e]=nVals.join('|');    
+                                        break;
+                                }                                
+                            }else nRow[ch.lc+ch.e]=d[i];
+                        })
+                        nData.push(nRow);
+                    })
+                    exportCSVFile(Object.keys(nData[0]),nData,'githubStats_'+a.loginGitHub+'_toOmk');
+                break;            
+                default:
+                    break;
+            }
+            hideLoader();
+        }
+
+
+
+
+
+        function setTable(data){
+            let rectFooter = d3.select('footer').node().getBoundingClientRect(),
+                rectHeader = d3.select('header').node().getBoundingClientRect(),
+                headers = Object.keys(data[0]);
+
+            hot = new Handsontable(d3.select('#contentDetails').append('div').node(), {
+                className: 'htDark',
+                afterGetColHeader: function(col, TH){
+                    TH.className = 'darkTH'
+                },
+                colHeaders: true,
+                rowHeaders: true,
+                data:data,
+                colHeaders: headers,
+                height: rectFooter.top-rectFooter.height-rectHeader.bottom,
+                width: '100%',
+                licenseKey: 'non-commercial-and-evaluation',
+                customBorders: true,
+                dropdownMenu: true,
+                multiColumnSorting: true,
+                filters: true,
+                selectionMode:'single',
+                columns: getCellEditor(headers),
+                allowInsertColumn: false,
+                copyPaste: false,
+            });
+
+            data.forEach((d,i)=>{
+                headers.forEach((h,j)=>{
+                    getExtras({ p: h, v: d[h], 
+                                'id':'c_'+d['dcterms:identifier']+'_'+i,
+                                'ghid':d['dcterms:identifier'],
+                                'r':d['dcterms:title'],
+                                'o':d['bibo:owner'],
+                                'cell':{'r':i,'c':j}
+                            });
+                });
+            });
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

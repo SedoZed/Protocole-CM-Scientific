@@ -1,3 +1,4 @@
+import {loader} from './loader.js';
 export class omk {
     constructor(params) {
         var me = this;
@@ -6,11 +7,17 @@ export class omk {
         this.ident = params.ident ? params.ident : false;
         this.mail = params.mail ? params.mail : false;
         this.api = params.api ? params.api : false;
-        this.vocabs = params.vocabs ? params.vocabs : ['dcterms','foaf','fup8','bibo'];
+        this.vocabs = params.vocabs ? params.vocabs : ['dcterms','genex','lexinfo'];
+        this.loader = new loader();
         this.user = false;
         this.props = [];
         this.class = [];
+        this.medias = [];
+        this.items = [];
+        this.resources = [];
         this.rts
+        this.anythingLLM = false;
+        this.queries = [];
         let perPage = 1000, types={'items':'o:item','media':'o:media'};
                 
         this.init = function () {
@@ -19,11 +26,23 @@ export class omk {
                 me.getProps(v);
                 me.getClass(v);
             })
-            me.getRT();
+            me.setRT();
+            me.loader.hide(true);
         }
-        this.getRT = function (cb=false){
+        this.setItemSets = function (cb=false){
+            me.itemSets = syncRequest(me.api+'item_sets?per_page=1000');
+            if(cb)cb(me.itemSets);
+        }
+
+        this.setRT = function (cb=false){
             me.rts = syncRequest(me.api+'resource_templates?per_page=1000');
             if(cb)cb(me.rts);
+        }
+        this.getRt = function (label){
+            return me.rts.filter(rt=>rt['o:label']==label)[0];                        
+        }
+        this.getRtById = function (id){
+            return me.rts.filter(rt=>rt['o:id']==id)[0];                        
         }
         this.getRtId = function (label){
             return me.rts.filter(rt=>rt['o:label']==label)[0]['o:id'];                        
@@ -33,6 +52,9 @@ export class omk {
                 data = syncRequest(url);
             data.forEach(p=>me.props.push(p));
             if(cb)cb(me.props);
+        }
+        this.getPropById = function (id){
+            return me.props.filter(prp=>prp['o:id']==id)[0];                        
         }
         this.getPropId = function (t){
             return me.props.filter(prp=>prp['o:term']==t)[0]['o:id'];                        
@@ -45,6 +67,11 @@ export class omk {
                 data = syncRequest(url);
             data.forEach(c=>me.class.push(c));
             if(cb)cb(data);
+        }
+
+        this.getClassById = function (id){
+            let c = me.class.filter(c=>c['o:id']==id);
+            return c[0];
         }
 
         this.getClassByName = function (cl){
@@ -89,23 +116,107 @@ export class omk {
             })
         }
 
+        this.getResource = function (url, cb=false){
+            if(me.resources[url])return me.resources[url];
+            let rs = syncRequest(url);
+            me.resources[url]=rs;
+            if(cb)cb(rs);                    
+            return rs;
+        }
+        this.getResourceType = function (id, type, cb=false){
+            let url = me.api+type+'/'+id;
+            if(me.resources[url])return me.resources[url];
+            let rs = syncRequest(url);
+            me.resources[url]=rs;
+            if(cb)cb(rs);                    
+            return rs;
+        }
+
+
+        this.updateRessource = async function (id, data, type='items', fd=null, m='PUT',cb=false, dataOri=false){
+            let oriData, newData, url = me.api+type+'/'+id+'?key_identity='+me.ident+'&key_credential='+me.key;
+            if(data){
+                //récupère les données originales
+                oriData = dataOri ? dataOri : me.getResourceType(id,type), 
+                newData = me.formatData(data,types[type]);
+                //met à jour les données
+                for (const p in newData) {
+                    if(p!='@type'){
+                        //vérifie si la propriété est dans les données originales                        
+                        if(oriData[p]){
+                            //m=="PUT" : on ajoute les nouvelles valeurs
+                            if(m=="PUT")oriData[p]= Array.isArray(oriData[p]) ? oriData[p].concat(newData[p]) : newData[p];
+                            //m=="PATCH" : on modifie les valeurs
+                            if(m=="PATCH")oriData[p]=newData[p];          
+                        }else{
+                            //ajoute la nouvelle propriété dans les données
+                            oriData[p]=newData[p];
+                        }     
+                    }
+                }
+            }
+            let rs = await postData({'u':url,'m':m}, fd ? fd : oriData);
+            me.items[rs['o:id']]=rs;
+            if(cb)cb(rs)
+            else return rs;
+        }        
+
         this.getItem = function (id, cb=false){
+            if(me.items[id])return me.items[id];
             let url = me.api+'items/'+id,
                 rs = syncRequest(url);
+            me.items[id]=rs;
             if(cb)cb(rs);                    
             return rs;
         }
 
         this.getMedia = function (id, cb=false){
+            if(me.medias[id])return me.medias[id];
             let url = me.api+'media/'+id,
                 rs = syncRequest(url);
+            me.medias[id]=rs;
             if(cb)cb(rs);                    
             return rs;
         }        
 
-        this.getItemAdminLink = function(item){
-            return me.api.replace("/api/","/admin/item/")+item['o:id'];
+        this.getAdminLink = function(r,id=false,type=false){
+            if(!type)type = r['@type'][0];
+            return type=="o:Item" ?
+                me.api.replace("/api/","/admin/item/")+(id ? id : r['o:id'])
+                : me.api.replace("/api/","/admin/media/")+(id ? id : r['o:id'])             
         }
+        this.getMediaLink = function(file){
+            return me.api.replace("/api","")+file;
+        }
+
+        this.getPropsHeader = function (item){
+            let header = [];
+            header.push({'o:label':'id','o:term':'o:id'});
+            if(item["o:resource_template"]){
+                me.getRtById(item['o:resource_template']['o:id'])["o:resource_template_property"].forEach(p=>{
+                    header.push(me.getPropById(p["o:property"]["o:id"]));
+                })   
+            }
+            return header;
+        }            
+
+        this.getDataForGrid = function (data,headers){
+            let gridData = [];
+            data.forEach(item=>{
+                let row = {'id':item['o:id']};
+                headers.forEach(h=>{
+                    if(item[h['o:term']]){
+                        if(h['o:term']=='o:id'){
+                            row[h['o:label']] = item[h['o:term']];
+                        }else{
+                            row[h['o:label']] = item[h['o:term']].map(d=>d.display_title ? d.display_title : d["@value"]).join(' - ');
+                        }
+                    }else row[h['o:label']] = '';
+                })                
+                gridData.push(row);
+            })   
+            return gridData;
+        }            
 
         //merci à https://stackoverflow.com/questions/33780271/export-a-json-object-to-a-text-file/52297652#52297652
         this.saveJson=function(data){
@@ -122,18 +233,19 @@ export class omk {
             document.body.removeChild(element);            
         }
 
-        this.getAllItems = function (query, cb=false){
+        this.getAllItems = function (query, cb){
             let url = me.api+'items?per_page='+perPage+'&'+query+'&page=', fin=false, rs=[], data, page=1;
+            //pause pour gérer l'affichage du loader
+            //setTimeout(function(){
             while (!fin) {
                 data = syncRequest(url+page);
                 //console.log(url+page,data);
                 fin = data.length ? false : true;
                 rs = rs.concat(data);
                 page++;
-            }                
-            if(cb)cb(rs);                    
-            return rs;
-        }
+            }
+            return cb ? cb(rs) : rs;                    
+    }
 
         this.getAllMedias = function (query, cb=false){
             let url = me.api+'media?per_page='+perPage+'&'+query+'&page=', fin=false, rs=[], data, page=1;
@@ -148,58 +260,88 @@ export class omk {
             return rs;
         }
 
-        this.searchItems = function (query, cb=false){
-            let url = me.api+'items?'+query, 
-            rs= syncRequest(url);
-            //console.log(url+page,data);                
-            if(cb)cb(rs);                    
+        this.searchItems = function (query, cb=false, sync=true){
+            let url = me.api+'items?'+query,rs; 
+            if(sync){
+                rs = syncRequest(url);
+                if(cb)cb(rs);                    
+            }
+            else
+                request(url,cb);
             return rs;
         }
 
-        
         this.getUser = function (cb=false){
             let url = me.api+'users?email='+me.mail+'&key_identity='+me.ident+'&key_credential='+me.key;                
             d3.json(url).then((data) => {
                 me.user = data.length ? data[0] : false;
+                //TODO: mieux gérer anythingLLM Login
+                me.user.anythingLLM = me.anythingLLM ? syncRequest(me.api.replace('api/','s/cours-bnf/page/ajax?json=1&helper=anythingLLMlogin')) : false;
                 if(cb)cb(me.user);
             });
-        }
-
-        this.createRessource = function (data, cb=false, type='items'){
-            let url = me.api+type+'?key_identity='+me.ident+'&key_credential='+me.key;
-            postData({'u':url,'m':'POST'}, me.formatData(data),data['file']).then((rs) => {
-                if(cb)cb(rs);
-            });
 
         }
 
-
-        this.createItem = async function (data, cb=false){
-            let url = me.api+'items?key_identity='+me.ident+'&key_credential='+me.key;
-            return await postData({'u':url,'m':'POST'}, this.formatData(data)).then((rs) => {
-                if(cb)cb(rs);
-            });
-        }
-
-        this.updateRessource = function (id, data, type='items', fd=null, m='PUT',cb=false){
-            let oriData, newData, url = me.api+type+'/'+id+'?key_identity='+me.ident+'&key_credential='+me.key;
-            if(data){
-                //récupère les données originales
-                oriData = me.getItem(id), newData = me.formatData(data,types[type]);
-                //met à jour les données
-                for (const p in newData) {
-                    if(p!='@type'){
-                        if(oriData[p])oriData[p]=oriData[p].concat(newData[p]);
-                        else oriData[p]=newData[p];    
-                    }
+        this.createItem = async function (data, cb=false, verifDoublons){
+            if(verifDoublons){
+                let items = me.searchItems(verifDoublons);
+                if(items.length){
+                    if(cb)cb(items[0]);
+                    return items[0];
                 }
             }
-            postData({'u':url,'m':m}, fd ? fd : oriData).then((rs) => {
-                if(cb)cb(rs);
-            });
-
+            let url = me.api+'items?key_identity='+me.ident+'&key_credential='+me.key,
+            rs = await postData({'u':url,'m':'POST'}, me.formatData(data));
+            me.items[rs['o:id']]=rs;
+            if(cb)cb(rs);
+            return rs;
         }
 
+        this.getConcept = async function (concept){
+            //vérifie l'existence du concept
+            let query = "property[0][joiner]=and&property[0][property]="
+                +me.getPropId('dcterms:title')
+                +"&property[0][type]=eq&property[0][text]="+concept
+                +"&resource_class_id[]="+me.getClassByTerm('skos:Concept')['o:id'],            
+            items = me.searchItems(query);
+            if(items.length)return items[0];
+            let url = me.api+'items?key_identity='+me.ident+'&key_credential='+me.key,
+                data = {
+                    'o:resource_class':'skos:Concept',
+                    "dcterms:title":concept, 
+                    "skos:prefLabel":concept,
+                };
+            return await postData({'u':url,'m':'POST'}, me.formatData(data));
+        }
+        this.getsetResource = async function (r,u){
+            if(me.items[r.index])return me.items[r.index];
+            //vérifie l'existence de la ressource
+            let query = "resource_class_id[]="+me.getClassByTerm(r.c)['o:id'], i=0;
+            if(!r.verif)r.verif=r.dt;
+            for (const k in r.verif) {
+                query += "&property["+i+"][joiner]=and&property["+i+"][property]="
+                +me.getPropId(k)
+                +"&property["+i+"][type]=eq&property["+i+"][text]="+encodeURI(r.verif[k]);
+            }
+            let items = me.searchItems(query),
+                url = me.api+'items?key_identity='+me.ident+'&key_credential='+me.key;
+                r.dt['o:resource_class']=r.c;
+                r.dt['o:resource_template']=r.rt;
+            if(items.length){
+                me.items[r.index]=items[0];
+                //vérifie s'il faut faire un update
+                if(u){
+                    let uData = me.formatData(u);
+                    uData.forEach((v,k)=>{
+                        items[0][k].push(v);
+                    })
+                    me.items[r.index] = await postData({'u':url,'m':'PATCH'}, items[0]);
+                    return me.items[r.index];
+                }else return items[0];
+            } 
+            me.items[r.index] = await postData({'u':url,'m':'POST'}, me.formatData(r.dt));
+            return me.items[r.index];
+        }
         this.formatData = function (data,type="o:Item"){
             let fd = {"@type" : type},p;
             for (let [k, v] of Object.entries(data)) {
@@ -208,7 +350,7 @@ export class omk {
                         fd[k]=[{'o:id':v}];
                         break;
                     case 'o:resource_class':
-                        p = me.class.filter(prp=>prp['o:term']==v)[0];                        
+                        p = me.getClassByTerm(v);                        
                         fd[k]={'o:id':p['o:id']};            
                         break;
                     case 'o:resource_template':
@@ -232,6 +374,7 @@ export class omk {
                     default:
                         if(!fd[k])fd[k]=[];
                         p = me.props.filter(prp=>prp['o:term']==k)[0];
+                        if(!p)throw new Error("Cette propriété n'existe pas : "+k);
                         if(Array.isArray(v)){
                             fd[k] = v.map(val=>formatValue(p,val));
                         }else                        
@@ -241,9 +384,17 @@ export class omk {
             }                         
             return fd;
         }
+        this.valueFormat = function(p,v){
+            return formatValue(p,v);
+        }
         function formatValue(p,v){
             if(typeof v === 'object' && v.rid)
                 return {"property_id": p['o:id'], "value_resource_id" : v.rid, "type" : "resource" };    
+            else if(typeof v === 'object' && v.a){
+                let value = formatValue(p,v.v);
+                value["@annotation"]=v.a;
+                return value;
+            }
             else if(typeof v === 'object' && v.u)
                 return {"property_id": p['o:id'], "@id" : v.u, "o:label":v.l, "type" : "uri" };    
             else if(typeof v === 'object')
@@ -277,17 +428,39 @@ export class omk {
                 options.body=bodyData;
             }
             const response = await fetch(url.u, options);
-            return await response.json(); // parses JSON response into native JavaScript objects
+            me.loader.hide(true);
+            return response.json(); // parses JSON response into native JavaScript objects
         }        
 
+        this.getSiteViewRequest = function(q,cb){
+            let url = me.api.replace('api','s')+q;
+            me.loader.show();
+            d3.json(url).then(json=>{
+                me.loader.hide(true);
+                cb(json);
+            });
+            //cb(syncRequest(url));
+        }
+
         function syncRequest(q){
+            me.loader.show();
             const request = new XMLHttpRequest();
             request.open('GET', q, false);  
             request.send(null);        
             if (request.status === 200) {
-              return JSON.parse(request.response);
+                me.loader.hide();
+                return JSON.parse(request.response);
             }        
-        };        
+        };       
+
+        function request(url, cb){
+            me.loader.show();
+            d3.json(url).then(json=>{
+                cb(json);
+                me.loader.hide();
+            });
+        };       
+
         this.init();
     }
 }
