@@ -9,7 +9,9 @@
     <script src="assets/js/bootstrap5.3.bundle.min.js" ></script>
     <script src="assets/js/all.min.js" ></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/handsontable.full.min.js"></script>
 
+    <link href="assets/css/handsontable.full.min.css" rel="stylesheet">
     <link href="assets/css/bootstrap5.3.min.css" rel="stylesheet" >
     <link href="assets/css/all.min.css" rel="stylesheet" >
     <link href="assets/css/main.css" rel="stylesheet" >
@@ -42,7 +44,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-sitemap"></i>
-                        <span id="selectExport">Choisir un itemset</span>    
+                        <span id="selectExport">itemSet(s) disponible(s)</span>    
                     </a>
                     <ul id="ddItemSet" class="dropdown-menu">
                     </ul>
@@ -62,10 +64,25 @@
     </div>
 </header>
 
-
     <main id='mainContent' class="px-3 overflow-y-scroll">
-        <div class="container-fluid text-center">
-            <div id="cardsImagesTrompeuses" class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col" >
+                    <h2>CSV à transformer</h2>
+                    <div id="hotCsv">
+                    </div>
+                </div>
+                <div class="col" >
+                    <h2>ItemSets de référence</h2>
+                    <div class="accordion" id="accordionItemSets">
+                    </div>
+
+                </div>
+                <div class="col" >
+                    <h2>Résultat du calcul</h2>
+                    <div id="hotResult">
+                    </div>
+                </div>
             </div>    
         </div>
     </main>
@@ -105,55 +122,11 @@
         import {auth} from './modules/auth.js';
         import {pa} from './modules/authParams.js';
 
-        let curwait=0, hot, a = new auth(pa), 
-        importMatrice = [
-            {'verifExist':'dcterms:identifier','o:resource_class':'fup8:Etudiant','o:resource_template':'Répondant','props':[
-                {'p':'dcterms:title','v':['Prénom','Nom']},
-                {'p':'foaf:firstName','v':'Prénom'},
-                {'p':'foaf:lastName','v':'Nom'},
-                {'p':'dcterms:identifier','v':'N° étudiant'},
-                {'p':'fup8:hasParcours','v':'Formation'},
-                {'p':'dcterms:educationLevel','v':'Niveau'},
-                {'p':'fup8:hasUniversity','v':'Établissement'},
-                {'p':'fup8:semestre','v':'Années scolaires'},
-                {'p':'fup8:hasEC','v':'Modules de cours'}
-                ]},
-            {'verifExist':'dcterms:identifier','o:resource_class':'bibo:Document','o:resource_template':'Image trompeuse','props':[
-                {'p':'dcterms:title','v':"Titre de l'image"},
-                {'p':'dcterms:format','v':'Format'},
-                {'p':'dcterms:medium','v':[{"prop":"Techniques",'multi':',','concept':true}]},
-                {'p':'dcterms:identifier','v':'Ajouter le fichier'},
-                {'p':"o:media",'v':'Ajouter le fichier'},
-                {'p':'dcterms:type','v':[{"prop":"Catégorie de l'image",'multi':',','concept':true}]},                
-                ]},
-            {'verifExist':'dcterms:identifier','o:resource_class':'bibo:Report','o:resource_template':'Analyse critique','props':[
-                {'p':'dcterms:title','v':[{'numItem':0,'prop':'dcterms:title'},{'numItem':1,'prop':'dcterms:title'}]},
-                {'p':'dcterms:description','v':"Description de l'image"},
-                {'p':'dcterms:identifier','v':[{'numItem':0,'prop':'o:id'},{'numItem':1,'prop':'o:id'},"Horodateur"]},
-                {'p':'fup8:hasEtudiant','v':[{'numItem':0,'prop':'o:id','resource':1}]},
-                {'p':'dcterms:source','v':[{'numItem':1,'prop':'o:id','resource':1}]},
-                {'p':'fup8:hasQuestion','v':[
-                    "@Justification du caractère trompeur de l'image",
-                    "@Analyse syntaxique",
-                    "@Analyse sémantique",
-                    "@Analyse pragmatique",
-                    "@Pourquoi et en quoi cette image est-elle trompeuse ?",
-                    "@Raisons de ce choix",
-                    "@Conclusion",
-                    "@Bilan",
-                ]},
-                {'p':'fup8:hasReponse','v':[
-                    "#Justification du caractère trompeur de l'image",
-                    "#Analyse syntaxique",
-                    "#Analyse sémantique",
-                    "#Analyse pragmatique",
-                    "#Pourquoi et en quoi cette image est-elle trompeuse ?",
-                    "#Raisons de ce choix",
-                    "#Conclusion",
-                    "#Bilan",
-                ]},
-                {'p':'dcterms:created','v':"Horodateur"},                
-                ]},
+        let curwait=0, hot, a = new auth(pa), dataItemSet = [], dataCsv = [], dataResult = [],
+            hots = [
+                {'id':'csv','title':"Données du CSV",'data':dataCsv, 'cont':d3.select("#hotCsv")},
+                {'id':'is','title':"Données de l'ItemSet",'data':dataItemSet, 'cont':d3.select("#hotItemSet1")},
+                {'id':'rs','title':"Résultat du calcul",'data':dataResult, 'cont':d3.select("#hotResult")},
             ];
 
         a.getUser(u=>{
@@ -161,14 +134,15 @@
             a.omk.setItemSets(data=>{                                                
                 if(data.length){
                     //récupère les item sets
-                    setMenu('#ddItemSet',data.map(d=>{
+                    dataItemSet = data.map(d=>{
                         return {
                             'id':d['o:id'],
                             'name':d['o:title'],
                             'path':d['o:resource_url']
                             };
-                        })
-                        ,'name',getItemSet);
+                        });
+
+                    setMenu('#ddItemSet',dataItemSet,'name',getItemSet);
                 }else{
                     d3.select('#selectExport').html('Aucun item set trouvé');
                     d3.select('#ddItemSet').remove();
@@ -176,20 +150,55 @@
             });
         });
 
+
+        //événement de changement du fichier    
+        document.getElementById('formFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                const contents = evt.target.result;
+                dataCsv = d3.csvParse(contents);
+                setTable('csv',dataCsv);
+            };
+            reader.readAsText(file);
+        });
+
+
         function getItemSet(e,d){
-            return;
+            //récupère le tableur 
             //récupère l'item set
-            d3.select('#selectExport').html(d.name);
-            d3.select('#mainContent').html('');
-            a.omk.getItemSet(d.id,items=>{
-                if(items.length){
-                    //récupère les items de l'item set
-                    setTable(items);
-                    d3.select('#btnGetId').on('click',()=>{showLoader();items.forEach((d,i)=>saveLineInOmk(d,i));});
-                }else{
-                    d3.select('#mainContent').html('<h2>Aucun item trouvé dans cet item set</h2>');
-                }
-            });
+            if(d3.select('#collapseIT'+d.id).size()==0){
+                let title = "Items de l'ItemSet : "+d.name,
+                    html = `
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIT${d.id}" aria-expanded="true" aria-controls="collapseIT${d.id}">
+                                ${title}
+                            </button>
+                        </h2>
+                        <div id="collapseIT${d.id}" class="accordion-collapse collapse show" data-bs-parent="#accordionItemSets">
+                            <div class="accordion-body">
+                                <div id="hotItemSet${d.id}" ></div>                            
+                            </div>
+                        </div>`;
+                //ajoute un item dans l'accordion
+                d3.select('#accordionItemSets').append('div').attr("class","accordion-item").html(html);
+                hots.push({'id':'is'+d.id,'title':title,'data':[],'cont':d3.select("#hotItemSet"+d.id)});
+                //récupère les items de l'item set
+                a.omk.getAllItems("item_set_id="+d.id,items=>{
+                    if(items.length){
+                        hots.find(h=>h.id=='is'+d.id).data = items.map(d=>{
+                            return {
+                                'id':d['o:id'],
+                                'name':d['o:title'],
+                                };
+                            });
+                        setTable('is'+d.id);
+                    }else{
+                        d3.select('#mainContent').html('<h2>Aucun item trouvé dans cet item set</h2>');
+                    }
+                });
+            }
         }
 
         function setMenu(s,data,lbl,fct){
@@ -204,115 +213,6 @@
             );
         }
 
-        
-
-        async function getSheetDoc(path){
-            //merci à https://davidwalsh.name/query-string-javascript
-            // https://developers.google.com/web/updates/2016/01/urlsearchparams?hl=en
-            let url = new URL(path),
-                urlParam = new URLSearchParams(url.search),
-                id = urlParam.get('id'),
-                //vérifie s'il faut exporter en pdf
-                pdf = await  getExportPdf(id);
-            //merci à https://stackoverflow.com/questions/50664868/get-pictures-from-google-drive-folder-with-javascript-to-my-website
-            return pdf == 'no'? "https://drive.google.com/uc?id="+id+"&export=download" : pdf;                        
-        }
-
-        async function saveLineInOmk(d,i){
-            let data, vals, val, items=[], item,
-                pMedia = false, create = true;
-            //récupère le document si besoin
-            importMatrice.forEach(m=>m.props.forEach(p=>{if(p.p=="o:media")pMedia=p;}));
-            if(pMedia){
-                d[pMedia.v] = await getSheetDoc(d[pMedia.v]);
-            }
-            for (let index = 0; index < importMatrice.length; index++) {
-                const imp = importMatrice[index];
-                data = {};
-                for (const p in imp) {
-                    if(p=='props'){
-                        imp[p].forEach(propval=>{
-                            vals = getPropVal(d, propval, items);
-                            for (const pv in vals) {
-                                data[pv]=vals[pv];
-                            }
-                        })
-                    }else if(p!='verifExist')
-                        data[p]=imp[p];
-                }
-                create=true;
-                if(imp.verifExist){
-                    let itemVerif = getItemByRef(imp,data);
-                    if(itemVerif.length){
-                        items.push(itemVerif[0]);
-                        create = false;
-                    }
-                }
-                if(create){
-                    //save data to omeka                
-                    await a.omk.createItem(data);
-                    item = getItemByRef(imp,data)[0];
-                    items.push(item);
-                }
-            }
-            showItems(items,i);
-
-        }
-
-        function getItemByRef(imp,data){
-            let pVerif = imp.props.filter(p=>p.p==imp.verifExist)[0],
-                vVerif = data[pVerif.p],
-                q = 'property[0][property]='
-                    +a.omk.getPropId(imp.verifExist)
-                    +'&property[0][type]=eq&property[0][text]='+encodeURIComponent(vVerif);                                                
-            return a.omk.searchItems(q);
-
-        }
-
-        function getPropVal(d, propval, items){
-            let val, data={};
-            if(Array.isArray(propval.v)){
-                val="";
-                propval.v.forEach((pp,num)=>{
-                    if(typeof pp === "object" && 'numItem' in pp){
-                        if(pp['prop']=='o:id')
-                            if(pp['resource']){
-                                if(!data[propval.p])data[propval.p]=[];
-                                data[propval.p].push({'rid':items[pp['numItem']][pp['prop']]});        
-                                val=false;
-                            }else
-                                val+=items[pp['numItem']][pp['prop']]+" ";
-                        else
-                            val+=items[pp['numItem']][pp['prop']][0]['@value']+" ";
-                    } else if (typeof pp === "object" && 'multi' in pp){
-                        if(!data[propval.p])data[propval.p]=[];
-                        d[pp.prop].split(pp.multi).forEach(v=>data[propval.p].push(v));
-                        val = false;
-                    }else if (pp.substring(0,1)=='@'){
-                        if(!data[propval.p])data[propval.p]=[];
-                        data[propval.p].push((num+1)+' - '+pp.substring(1));
-                        val = false;
-                    }
-                    else if (pp.substring(0,1)=='#'){
-                        if(!data[propval.p])data[propval.p]=[];
-                        data[propval.p].push((num+1)+' - '+d[pp.substring(1)]);
-                        val = false;
-                    }
-                    else val+=d[pp]
-                });
-                if(val){
-                    val = val.substring(0, val.length - 1);
-                    data[propval.p]=val;
-                }
-            }else
-                data[propval.p]=d[propval.v];
-            return data;
-        }
-        async function getExportPdf(id){
-            const response = await fetch("exportToPdf.php?id="+id);
-            const url = await response.text();
-            return url;
-        }
 
         function showItems(items,i){
             console.log(items);
@@ -429,48 +329,35 @@
             hideLoader();
         }
 
-
-
-
-
-        function setTable(data){
+        function setTable(idHot,data){
             let rectFooter = d3.select('footer').node().getBoundingClientRect(),
                 rectHeader = d3.select('header').node().getBoundingClientRect(),
-                headers = Object.keys(data[0]);
-
-            hot = new Handsontable(d3.select('#contentDetails').append('div').node(), {
-                className: 'htDark',
-                afterGetColHeader: function(col, TH){
-                    TH.className = 'darkTH'
-                },
-                colHeaders: true,
-                rowHeaders: true,
-                data:data,
-                colHeaders: headers,
-                height: rectFooter.top-rectFooter.height-rectHeader.bottom,
-                width: '100%',
-                licenseKey: 'non-commercial-and-evaluation',
-                customBorders: true,
-                dropdownMenu: true,
-                multiColumnSorting: true,
-                filters: true,
-                selectionMode:'single',
-                columns: getCellEditor(headers),
-                allowInsertColumn: false,
-                copyPaste: false,
-            });
-
-            data.forEach((d,i)=>{
-                headers.forEach((h,j)=>{
-                    getExtras({ p: h, v: d[h], 
-                                'id':'c_'+d['dcterms:identifier']+'_'+i,
-                                'ghid':d['dcterms:identifier'],
-                                'r':d['dcterms:title'],
-                                'o':d['bibo:owner'],
-                                'cell':{'r':i,'c':j}
-                            });
+                h = hots.find(d=>d.id==idHot);
+            if(data) h.data = data;
+            let headers = Object.keys(h.data[0]),
+                hot = new Handsontable(h.cont.append('div').node(), {
+                    className: 'htDark',
+                    afterGetColHeader: function(col, TH){
+                        TH.className = 'darkTH'
+                    },
+                    colHeaders: true,
+                    rowHeaders: true,
+                    data:h.data,
+                    colHeaders: headers,
+                    height: rectFooter.top-rectFooter.height-rectHeader.bottom,
+                    width: '100%',
+                    licenseKey: 'non-commercial-and-evaluation',
+                    customBorders: true,
+                    dropdownMenu: true,
+                    multiColumnSorting: true,
+                    filters: true,
+                    selectionMode:'single',
+                    columns: getCellEditor(headers),
+                    allowInsertColumn: false,
+                    copyPaste: false,
                 });
-            });
+
+            
 
         }
 
