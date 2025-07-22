@@ -448,7 +448,7 @@ export class omk {
             request.open('GET', q, false);  
             request.send(null);        
             if (request.status === 200) {
-                me.loader.hide();
+                //me.loader.hide();
                 return JSON.parse(request.response);
             }        
         };       

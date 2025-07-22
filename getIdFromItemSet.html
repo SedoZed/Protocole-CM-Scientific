@@ -67,19 +67,19 @@
     <main id='mainContent' class="px-3 overflow-y-scroll">
         <div class="container-fluid">
             <div class="row">
-                <div class="col" >
+                <div class="col-4" >
                     <h2>CSV à transformer</h2>
                     <div id="hotCsv">
                     </div>
                 </div>
-                <div class="col" >
+                <div class="col-4" >
                     <h2>ItemSets de référence</h2>
                     <div class="accordion" id="accordionItemSets">
                     </div>
 
                 </div>
-                <div class="col" >
-                    <h2>Résultat du calcul</h2>
+                <div class="col-4" >
+                    <h2>Résultat du calcul<button type="button" id="btnExportResult" class="btn btn-outline-success ms-2"><i class="fa-solid fa-file-export"></i></button></h2>
                     <div id="hotResult">
                     </div>
                 </div>
@@ -107,98 +107,163 @@
 
 </div>
 
-    
-    <div id="loading-container">
-        <div class="loadingio-spinner-double-ring-4dols36ufwg" id="ws-loading">
-            <div class="ldio-6pd26u1x99x">
-            <div></div>
-            <div></div>
-            <div><div></div></div>
-            <div><div></div></div>
-        </div></div>
-    </div>
 
     <script type="module">
         import {auth} from './modules/auth.js';
         import {pa} from './modules/authParams.js';
+        import {modal} from './modules/modal.js';
 
-        let curwait=0, hot, a = new auth(pa), dataItemSet = [], dataCsv = [], dataResult = [],
+        let csvfile, curwait=0, hot, 
+            a = new auth(pa),
+            mod = new modal(), 
+            dataItemSet = [], dataCsv = [], dataResult = [], separateur = '—',
             hots = [
                 {'id':'csv','title':"Données du CSV",'data':dataCsv, 'cont':d3.select("#hotCsv")},
                 {'id':'is','title':"Données de l'ItemSet",'data':dataItemSet, 'cont':d3.select("#hotItemSet1")},
                 {'id':'rs','title':"Résultat du calcul",'data':dataResult, 'cont':d3.select("#hotResult")},
             ];
-
+        //connexion à omk
         a.getUser(u=>{
             console.log(u);
+            a.omk.loader.show();
             a.omk.setItemSets(data=>{                                                
                 if(data.length){
                     //récupère les item sets
                     dataItemSet = data.map(d=>{
                         return {
-                            'id':d['o:id'],
-                            'name':d['o:title'],
-                            'path':d['o:resource_url']
+                            'o:id':d['o:id'],
+                            'dcterms:title':d['dcterms:title'][0]['@value'],
+                            'o:resource_url':d['o:resource_url']
                             };
                         });
 
-                    setMenu('#ddItemSet',dataItemSet,'name',getItemSet);
+                    setMenu('#ddItemSet',dataItemSet,'dcterms:title',getItemSet);
                 }else{
                     d3.select('#selectExport').html('Aucun item set trouvé');
                     d3.select('#ddItemSet').remove();
                 }
+                a.omk.loader.hide(true);
             });
         });
 
+        //événement de clic sur le bouton pour récupérer les ids
+        d3.select('#btnGetId').on('click',function(e){
+            calcRefs();
+        });
+
+        //événement de clic sur le bouton pour exporter les résultats
+        d3.select('#btnExportResult').on('click',function(e){
+            exportData(e,{id:1});
+        });
 
         //événement de changement du fichier    
         document.getElementById('formFile').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (!file) return;
+            csvfile = e.target.files[0];
+            if (!csvfile) return;
             const reader = new FileReader();
             reader.onload = function(evt) {
                 const contents = evt.target.result;
                 dataCsv = d3.csvParse(contents);
                 setTable('csv',dataCsv);
             };
-            reader.readAsText(file);
+            reader.readAsText(csvfile);
         });
 
+        function calcRefs() {
+            //traite les datas du CSV
+            if(dataCsv.length && dataItemSet.length){
+                console.log('Calcul des références');
+                d3.select('#btnExportResult').attr('class','btn btn-outline-danger ms-2');
+                a.omk.loader.show();            
 
-        function getItemSet(e,d){
+                //récupère les colonnes du CSV
+                let headers = Object.keys(dataCsv[0]),
+                    propTitle = a.omk.getPropByTerm('dcterms:title')['o:id'], //récupère l'identifiant de la propriété o:title
+                    nData = [], //pour stocker les nouvelles données
+                    nRow = {}; //pour stocker les nouvelles lignes
+                //création des nouvelle lignes
+                dataCsv.forEach(r=>{
+                    nRow = {};
+                    headers.forEach(h=>{
+                        //récupère l'itemset correspondant à la colonne
+                        let itemSet = dataItemSet.find(is=>is['dcterms:title']==h);                           
+                        if(itemSet){
+                             //récupère l'item set
+                            let is = getItemSet(null,itemSet,{'clsHead':' bg-success text-black '});
+                            //prise en compte des séparateurs de valeurs
+                            let rs = r[h].split(separateur), vals=[];
+                            rs.forEach(d=>{
+                                //récupère l'item ayant le titre correspondant et présent dans l'item set
+                                /* version avec requête omk
+                                let item = a.omk.searchItems('item_set_id='+itemSet.id+'&property[0][property]='+propTitle+'&property[0][type]=eq&property[0][text]='+d),
+                                */
+                                //version avec recherche dans les données de l'item set
+                                let item = is.data.filter(i=>i['dcterms:title']==d);
+                                //si l'item est trouvé : on remplace le texte par l'identifiant de l'item
+                                if(item.length){
+                                    vals.push(item[0]['o:id']);;
+                                }else{
+                                    vals.push(d);   
+                                }
+                            });
+                            nRow[h] = vals.join(separateur); //on concatène les valeurs avec le séparateur
+                        }else{  
+                            //si la colonne n'est pas dans la liste des item sets on garde le texte
+                            nRow[h] = r[h];
+                        }
+                    });
+                    nData.push(nRow);
+                });
+                //met à jour la table des résultats 
+                dataResult = nData;
+                setTable('rs',dataResult);
+                a.omk.loader.hide(true);
+            }
+        }
+
+        function getItemSet(e,d,params={}){
             //récupère le tableur 
             //récupère l'item set
-            if(d3.select('#collapseIT'+d.id).size()==0){
-                let title = "Items de l'ItemSet : "+d.name,
+            if(d3.select('#collapseIT'+d['o:id']).size()==0){
+                let title = "Items de l'ItemSet : "+d['dcterms:title'],
+                    show = true,//si on ne montre pas hansontable n'affiche rien
                     html = `
                         <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIT${d.id}" aria-expanded="true" aria-controls="collapseIT${d.id}">
+                            <button id="btncollapseIT${d['o:id']}" class="accordion-button ${show ? "" : "collapsed"} ${params.clsHead ? params.clsHead : ""}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIT${d['o:id']}" aria-expanded="${show}" aria-controls="collapseIT${d['o:id']}">
                                 ${title}
                             </button>
                         </h2>
-                        <div id="collapseIT${d.id}" class="accordion-collapse collapse show" data-bs-parent="#accordionItemSets">
+                        <div id="collapseIT${d['o:id']}" class="accordion-collapse collapse ${show ? "show" : ""}" data-bs-parent="#accordionItemSets">
                             <div class="accordion-body">
-                                <div id="hotItemSet${d.id}" ></div>                            
+                                <div id="hotItemSet${d['o:id']}" ></div>                            
                             </div>
                         </div>`;
                 //ajoute un item dans l'accordion
                 d3.select('#accordionItemSets').append('div').attr("class","accordion-item").html(html);
-                hots.push({'id':'is'+d.id,'title':title,'data':[],'cont':d3.select("#hotItemSet"+d.id)});
+                hots.push({'id':'is'+d['o:id'],'title':title,'data':[],'cont':d3.select("#hotItemSet"+d['o:id'])});
                 //récupère les items de l'item set
-                a.omk.getAllItems("item_set_id="+d.id,items=>{
+                a.omk.getAllItems("item_set_id="+d['o:id'],items=>{
                     if(items.length){
-                        hots.find(h=>h.id=='is'+d.id).data = items.map(d=>{
+                        hots.find(h=>h.id=='is'+d['o:id']).data = items.map(d=>{
                             return {
-                                'id':d['o:id'],
-                                'name':d['o:title'],
-                                };
-                            });
-                        setTable('is'+d.id);
+                                'o:id':d['o:id'],
+                                'dcterms:title':d['dcterms:title'][0]['@value']
+                            }
+                        });
+                        setTable('is'+d['o:id'],null,{'pcH':2});
                     }else{
                         d3.select('#mainContent').html('<h2>Aucun item trouvé dans cet item set</h2>');
                     }
                 });
+            }else{
+                //gestion des paramètres
+                if(params.clsHead){
+                    let cls = d3.select('#btncollapseIT'+d['o:id']).attr('class');
+                    d3.select('#btncollapseIT'+d['o:id']).attr('class',cls+params.clsHead);
+                };
             }
+            a.omk.loader.hide(true);
+            return hots.find(h=>h.id=='is'+d['o:id']);
         }
 
         function setMenu(s,data,lbl,fct){
@@ -219,123 +284,40 @@
         }
 
         function exportData(e,d){
-            showLoader();
-            switch (d.id) {
-                case 1:
-                    const exportPlugin = hot.getPlugin('exportFile');
-                    exportPlugin.downloadFile('csv', {
-                        bom: false,
-                        columnDelimiter: ',',
-                        columnHeaders: true,
-                        exportHiddenColumns: true,
-                        exportHiddenRows: true,
-                        fileExtension: 'csv',
-                        filename: 'githubStats_'+a.loginGitHub+'[YYYY]-[MM]-[DD]',
-                        mimeType: 'text/csv',
-                        rowDelimiter: '\r\n',
-                        rowHeaders: true
-                    });                    
-                    break;            
-                case 2:
-                    let mContrib = groups.contributors.map(c=>{
-                    return {
-                        'o:resource_class':'jdc:Actant',
-                        'dcterms:identifier':c.id,
-                        'foaf:account':c.login,
-                        'dcterms:title':'GitHub '+c.type+' : '+c.login,
-                        'schema:provider ^^resource':'GitHub',
-                        'foaf:accountServiceHomepage ^^uri':c.html_url,
-                        'Media url':c.avatar_url
-                        }
-                    });
-                    exportCSVFile(Object.keys(mContrib[0]),mContrib,'githubStats_'+a.loginGitHub+'_contributors');
-                break;            
-                case 4:
-                    let mLang = groups.langages.map(l=>{
-                    return {
-                        'o:resource_class':'skos:Concept',
-                        'skos:broader ^^resource':'72015|120165',
-                        'skos:prefLabel':l,
-                        'dcterms:title':l,
-                        }
-                    });
-                    exportCSVFile(Object.keys(mLang[0]),mLang,'githubStats_'+a.loginGitHub+'_langages');
-                break;            
-                case 3:
-                    let q, rs, nVals, nRow= {}, nData= [], gData = hot.getData(); 
-                    gData.forEach(d=>{
-                        //calcule les nouvelles valeurs
-                        nRow= {};
-                        configHeaders.forEach((ch,i)=>{
-                            if(ch.e==" ^^resource" && d[i]){
-                                //remplace les valeurs textes par les identifiant de resource omk
-                                switch (ch.lc) {
-                                    case 'schema:provider':
-                                        nRow[ch.lc+ch.e]=oidGitHub;    
-                                        break;
-                                    case 'bibo:contributorList':                                        
-                                        nVals = []
-                                        d[i].split('|').forEach(r=>{
-                                            if(!refs[r]){
-                                                    q = 'property[0][property]='
-                                                    +a.omk.getPropId('foaf:accountServiceHomepage')
-                                                    +'&property[0][type]=eq&property[0][text]=https://github.com/'+r;
-                                                rs = a.omk.searchItems(q);
-                                                if(rs){
-                                                    nVals.push(rs[0]['o:id']);
-                                                    refs[r]=rs[0]['o:id'];
-                                                }else{
-                                                    refs[r]=' ';
-                                                    console.log("pas d'identifiant dans omk : "+q);
-                                                }     
-                                            }else nVals.push(refs[r]);
- 
-                                        });
-                                        nRow[ch.lc+ch.e]=nVals.join('|');    
-                                        break;
-                                    case 'schema:programmingLanguage':                                        
-                                        nVals = []
-                                        d[i].split('|').forEach(r=>{
-                                            if(!refs[r]){
-                                                    q = 'property[0][property]='+a.omk.getPropId('skos:altLabel')
-                                                    +'&property[0][type]=eq&property[0][text]='+r
-                                                    +'&property[1][property]='+a.omk.getPropId('skos:broader')
-                                                    +'&property[1][type]=res&property[1][text]=72015'
-                                                    +'&property[2][property]='+a.omk.getPropId('skos:broader')
-                                                    +'&property[2][type]=res&property[2][text]=120165';
-                                                rs = a.omk.searchItems(q);
-                                                if(rs.length){
-                                                    nVals.push(rs[0]['o:id']);
-                                                    refs[r]=rs[0]['o:id'];
-                                                }else{
-                                                    refs[r]=' ';
-                                                    console.log("pas d'identifiant dans omk : "+q);
-                                                }     
-                                            }else nVals.push(refs[r]);
- 
-                                        });
-                                        nRow[ch.lc+ch.e]=nVals.join('|');    
-                                        break;
-                                }                                
-                            }else nRow[ch.lc+ch.e]=d[i];
-                        })
-                        nData.push(nRow);
-                    })
-                    exportCSVFile(Object.keys(nData[0]),nData,'githubStats_'+a.loginGitHub+'_toOmk');
-                break;            
-                default:
-                    break;
-            }
-            hideLoader();
+            if(!csvfile)return;
+            a.omk.loader.show();
+            let h = hots.find(h=>h.id=='rs');
+            if(!h.data.length)return;
+            
+            const exportPlugin = h.hot.getPlugin('exportFile');
+            exportPlugin.downloadFile('csv', {
+                bom: false,
+                columnDelimiter: ',',
+                columnHeaders: true,
+                exportHiddenColumns: true,
+                exportHiddenRows: true,
+                fileExtension: 'csv',
+                filename: csvfile.name+'_refs_'+'[YYYY]-[MM]-[DD]',
+                mimeType: 'text/csv',
+                rowDelimiter: '\r\n',
+                rowHeaders: true
+            });                    
+
+            a.omk.loader.hide();
         }
 
-        function setTable(idHot,data){
+        function setTable(idHot, data, params={}){
             let rectFooter = d3.select('footer').node().getBoundingClientRect(),
                 rectHeader = d3.select('header').node().getBoundingClientRect(),
                 h = hots.find(d=>d.id==idHot);
             if(data) h.data = data;
-            let headers = Object.keys(h.data[0]),
-                hot = new Handsontable(h.cont.append('div').node(), {
+            if(h.hot){
+                h.hot.loadData(h.data);
+                h.hot.render();
+                return
+            }
+            let headers = Object.keys(h.data[0]);
+            h.hot = new Handsontable(h.cont.append('div').node(), {
                     className: 'htDark',
                     afterGetColHeader: function(col, TH){
                         TH.className = 'darkTH'
@@ -344,7 +326,7 @@
                     rowHeaders: true,
                     data:h.data,
                     colHeaders: headers,
-                    height: rectFooter.top-rectFooter.height-rectHeader.bottom,
+                    height: (rectFooter.top-rectFooter.height-rectHeader.bottom)/(params.pcH ? params.pcH : 1),
                     width: '100%',
                     licenseKey: 'non-commercial-and-evaluation',
                     customBorders: true,
