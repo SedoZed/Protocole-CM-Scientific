@@ -33,7 +33,7 @@ Ce corpus de document a été créé en Markdown via l'extension pour VisualStud
 
 ### Data-gestion
 - [Création de dataset](/donnees_labo/creation_data_exploitables.qmd)
-- [Création d'une interface d'exploitation des données](/donnees_labo/creation_vocabulaire_lie_aux_donnes.qmd)
+- [Exploitation d'un dataset lié au laboratoire](/donnees_labo/exploitation_dataset.qmd)
 
 ### Communication
 - [Réseaux Sociaux : LinkedIn](/reseaux/linkedin.qmd)

@@ -1,6 +1,56 @@
 ---
-title: "Accueil - Gestion numérique d'un laboratoire"
+title: "Hypothes.is - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-Parler de cet outil collaboratif
+# Gestion numérique d'un laboratoire : Introduction à l'outil "Hypothes.is"
+
+## Introduction
+
+[Hypothes.is](https://web.hypothes.is/) est une application web open source développée dans l’optique d’enrichir la lecture en ligne via des annotations collaboratives. Les utilisateurs peuvent en effet surligner ou annoter comme dans un livre, puis discuter des contenus numériques directement sur des pages web ou des fichiers PDF. Grâce à ses fonctionnalités de groupes privés, il devient également un espace de travail collaboratif, où les membres d’une même équipe de recherche peuvent annoter ensemble un corpus, commenter des articles récents ou co-construire une revue de littérature.
+
+Dans le champ des humanités numériques, l’application joue un rôle clé en soutenant des pratiques de science ouverte, en favorisant la transparence des processus intellectuels et en offrant un support pour l’écriture critique collective. Intégrée aux environnements de recherche en ligne, Hypothes.is permet ainsi d’ancrer la lecture dans un dialogue actif, rigoureux et collaboratif — au service de la production et de la circulation du savoir.
+
+### Usage d'Hypothes.is dans le cadre du community management
+
+Bien qu'initialement conçu pour enrichir collectivement la lecture en ligne à l'instar d'un surlignage dans un livre public, il est facilement imaginable que le concept d'annotation puisse servir d'autres rôles, comme la suggestion de modification par exemple. Ainsi, l'annotation de corrections à apporter *(ajout, suppression, modification)*, notamment sur le site web du laboratoire, devient dynamique et collective, tandis que chacun peut suggérer des modifications de tout temps, sur des informations générales ou sur un projet en particulier. Cela facilite l’inclusion de tous dans le processus de mise à jour des informations, qu’il s’agisse du site institutionnel ou des projets en cours, de manière simple et collective.
+
+## Prise en main du logiciel
+
+### Création de compte et accès à l'interface
+
+La première étape est évidemment la création d'un compte "Hypothes.is", si cela n'est pas déjà fait, à l'adresse suivante.
+- Création de compte : [https://web.hypothes.is/web-app-start/](https://web.hypothes.is/web-app-start/)
+
+Afin de permettre une bonne identification du personnel du laboratoire, il est préférable d'utiliser des identifiants public facilement reconnaissable comme, à titre d'exemple :
+- "Prenom_InitialNom"
+- "InitialPrenom_Nom"
+- "Nom_Prenom" ...
+- "Pseudonyme connu du personnel"
+
+Etant donné que Hypothes.is reste un outil public, l'intégration d'une mention reliant à Paragraphe dans l'identifiant n'est pas pertinent (d'autant plus que l'on utilisera un ou des groupes privés spécifiques pour le laboratoire)
+
+#### Deux façons d’accéder à l’interface
+
+- **Via le proxy de l’application Hypothes.is**  
+  C’est la méthode la plus simple : il suffit d’ajouter `https://via.hypothes.is/` avant l’URL de la page que l’on souhaite annoter.
+
+  Exemple :  
+  Pour annoter la page : `https://paragraphe.univ-paris8.fr/`  
+  Il faut ouvrir :  
+  `https://via.hypothes.is/https://paragraphe.univ-paris8.fr/`  
+  La page s’ouvrira avec le volet d’annotation activé.
+
+- **Via une extension de navigateur**
+  - Chrome / navigateurs basés sur Chromium : [Ajouter l’extension officielle](https://chromewebstore.google.com/detail/hypothesis-web-pdf-annota/bjfhmglciegochdpefhhlphglcehbmek)
+  - Safari : [Utiliser le bookmarklet](https://web.hypothes.is/help/installing-the-bookmarklet/)
+    - *Une aide d'installation en français est [disponible ici](https://vertigo.hypotheses.org/evaluations-et-commentaires-ouverts/tutoriel-dutilisation-de-loutil-dannotation-hypothes-is).*
+  - Firefox : [Installer l’extension non-officielle](https://addons.mozilla.org/fr/firefox/addon/unofficial-hypothesis/)
+
+  Une fois l’extension ou le favori installé, il suffit de l’activer sur la page web que vous souhaitez annoter.
+
+### Accéder au groupe collaboratif du laboratoire puis créer
+
+Pour rejoindre le groupe d’annotation du laboratoire Paragraphe, utilisez directement : [https://hypothes.is/groups/xkJe1Z1r/labo-paragraphe-comm](https://hypothes.is/groups/xkJe1Z1r/labo-paragraphe-comm)
+
+Dès lors qu'il sera question de poster une annotation sur le groupe, il faudra bien penser à sélectionner le groupe en question au risque de voir l'annotation apparaître dans le canal "Public" et d'avoir moins de chance d'être vue. En cliquant sur "Public" *(en haut de l'interface dynamique)*, puis sur le groupe rejoint. Si le groupe n'apparait pas, c'est qu'il n'a pas été intégré.
