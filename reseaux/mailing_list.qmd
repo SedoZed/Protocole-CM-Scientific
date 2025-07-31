@@ -1,6 +1,10 @@
 ---
-title: "Accueil - Gestion numérique d'un laboratoire"
+title: "Mise en place d'une mailing list interne - Gestion numérique d'un laboratoire"
 format: html
 ---
 
+# Gestion numérique d'un laboratoire - Mise en place d'une mailing list interne
+
 Objectif : Créer une multitude de réseau de mailing list interne (enseignant-chercheur, profs, partenaires, ...). 
+
+Logiciel qui risque d'être exploité : Brevo

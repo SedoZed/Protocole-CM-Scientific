@@ -1,0 +1,41 @@
+```{mermaid}
+
+classDiagram
+direction TB
+    class calcRefs {
+	    +dataCsv: Array
+	    +dataItemSet: Array
+	    +dataResult: Array
+	    +separateur: String
+	    +propTitle: Number
+	    +calcRefs()
+    }
+
+    class ItemSet {
+	    +dcterms:title: String
+	    +id: Number
+	    +data: Array
+    }
+
+    class Item {
+	    +dcterms:title: String
+	    +o:id: Number
+    }
+
+    class Loader {
+	    +show() void
+	    +hide(force: Boolean) void
+    }
+
+    class a.omk {
+	    +loader: Loader
+	    +getPropByTerm(term: String) Object
+	    +searchItems(query: String) Array
+    }
+
+    calcRefs --> ItemSet
+    calcRefs --> a.omk
+    ItemSet --> Item
+    a.omk --> Loader
+
+```

@@ -23,9 +23,10 @@ Par cette nouvelle méthode, l'actualisation du site pourra se faire en continu 
 ## Prise en main du logiciel
 Dans l'ensemble, [Hypothes.is](https://web.hypothes.is/) est une application très facile à installer et à utiliser lors de la navigation web, celle-ci ayant été pensée comme une extension au navigateur. Les points ci-dessous vous guideront de l'inscription/installation jusqu'à l'intégration du groupe privé Hypothes.is de communication du laboratoire.  
 
-### Création de compte et accès à l'interface
+### Rendre Hypothes.is fonctionnel (simple et efficace)
+#### 1. Création d'un compte personnel
 
-Etant donné que, par défaut, les annotations sont publiées dans le canal "Public" d'Hypothes.is, il est nécessaire de créer un compte pour accéder à l'application. Plusieurs formules sont disponibles, mais dans notre cas la formule gratuite convient parfaitement.
+Afin d'avoir accès aux services proposés par *Hypothes.is* et ainsi partager avec d'autres utiliateurs vos annotations, **il est nécessaire avant tout de se créer un compte**. Plusieurs formules sont disponibles, payantes comme gratuites. Pour l'usage que nous voulons en faire, cette dernière suffit amplement.
 - Création de compte : [https://web.hypothes.is/web-app-start/](https://web.hypothes.is/web-app-start/)
 
 **__NOTE__** : **Afin de permettre une bonne identification du personnel du laboratoire, il est préférable d'utiliser des identifiants public facilement reconnaissable**, comme à titre d'exemple :
@@ -36,7 +37,7 @@ Etant donné que, par défaut, les annotations sont publiées dans le canal "Pub
 
 Etant donné la portée *tout-public* de Hypothes.is, l'intégration d'une mention reliant à Paragraphe dans l'identifiant n'est pas une nécessité, étant donné que les annotations utiles au laboratoire se feront dans des groupes privés.
 
-#### Accéder à l'interface de Hypothes.is
+#### 2. Accéder à l'interface de Hypothes.is
 
 L'interface de Hypothes.is est accessible par deux moyens :
 
@@ -57,13 +58,29 @@ La méthode varie en fonction de votre navigateur, mais une fois installé la re
 
   Une fois l’extension ou le favori installé, il suffit de l’activer sur la page web que vous souhaitez annoter.
 
-### Accéder au groupe collaboratif du laboratoire puis créer
+### 3. Accéder au groupe collaboratif du laboratoire
 
 Pour rejoindre le groupe d’annotation du laboratoire Paragraphe, utilisez directement : [https://hypothes.is/groups/xkJe1Z1r/labo-paragraphe-comm](https://hypothes.is/groups/xkJe1Z1r/labo-paragraphe-comm)
 
 Dès lors qu'il sera question de poster une annotation sur le groupe, il faudra bien penser à sélectionner le groupe en question au risque de voir l'annotation apparaître dans le canal "Public" et d'avoir moins de chance d'être vue. En cliquant sur "Public" *(en haut de l'interface dynamique)*, puis sur le groupe rejoint. Si le groupe n'apparait pas, c'est qu'il n'a pas été intégré.
 
 ![Choix du canal de publication](/assets/img/screenshot_interface2.png)
+
+### 4. Commencer à annoter
+
+Une fois connecté à Hypopthes.is, l'interface ouverte et le groupe rejoint, il est temps de commencer à annoter ! 
+
+![Gif montrant comment annoter. Si celui-ci ne se lance pas, référez-vous au texte ci-dessous](/assets/img/Animation.gif)
+
+**Description du GIF étape par étape** :
+
+1. D'abord, s'assurer que Hypothes.is est bien lancé en vérifiant si le menu à droite de l'écran peut s'ouvrir. Si ce n'est le cas, cliquez sur votre extension ou assurez vous que votre URL est correctement modifié (cf. [Accéder à l'interface de Hypothes.is](#accéder-à-linterface-de-hypothes.is)).
+
+2. Sélectionner la partie du document à annoter en le surlignant. Une fois le surlignage effectué, une bulle va apparaître avec les options "Highlight" et "Annotate" : Le premier permet d'uniquement surligner tandis que l'autre permet de faire le surlignage ET d'annoter. La deuxièmem option est donc à privilégier.
+
+3. Une fois "annotate" sélectionné, l'interface s'ouvre. Remplissez la zone de texte avec vos idées, ajoutez des mots-clés comme ("suggestion" ou "modifier" par exemple)  dans la zone en dessous. Enfin, cliquez sur "Post to [nom du groupe]". *NOTE : Si il est inscrit "Post to Public", c'est que vous êtes dans le canal Public de Hypothes.is. N'oubliez pas de le changer en haut de l'interface !*
+
+4. La note est maintenant publiée !
 
 ## Instructions d'utilisation pour le community management
 
@@ -75,5 +92,6 @@ Afin d'assurer une utilisation efficace de l'application et du processus de valo
 - N'hésitez pas à répondre aux annotations laissées par vos collègues pour approfondir si nécessaire (préciser, infirmer, ...).
 - Dans le cas où les modifications sont conséquentes ou qu'il y a besoin d'un nouvel article (notamment pour le site internet), privilégier le contact par mail du community manager et/ou de ses associés. Une courte annotation peut ceci-dit être laissée pour y indiquer le besoin. 
 - (Ce protocole est susceptible d'évoluer avec le temps)
+
 
 ![Logo Paragraphe](/assets/img/logo-paragraphe-blanc.svg) !
