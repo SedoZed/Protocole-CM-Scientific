@@ -3,14 +3,16 @@ title: "Gérer le site web - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-# Gestion numérique d'un laboratoire - Remise à niveau du site internet
+# Gestion numérique d'un laboratoire - Maintenir à jour le site internet
 
 ## Introduction
-Indispensable aujourd'hui pour tous les organismes, le site web est un élément primordial dans la communication d'une institution vers l'extérieur. Véritable vitrine des activités du laboratoire, le site est l'atout principal de ce dernier pour se valoriser dans le domaine scientifique. Cependant, cela peut aussi jouer en sa défaveur si celui-ci est mal géré, ternissant le prestige du laboratoire sur la scène scientifique.
 
+Absolument indispensable de nos jours pour tous les organismes (laboratoire ou non), le site web d'un laboratoire se place comme étant très certainement l'élément principal de ce dernier pour assurer sa valorisation scientifique. En effet, ledit site constitue une sorte de vitrine pour le public, à laquelle sont exposées les activités du laboratoire et où le public se fera un premier opinion vis-à-vis de la crédibilité du laboratoire. S'assurer d'avoir un site maintenu à flot est donc primordial pour sauvegarder la crédibilité du laboratoire sur le plan scientifique. Cependant, comme mentionné en [introduction au corpus](../index.qmd), un manque de moyen pour s'occuper efficacement de ces tâches semble se faire ressentir à travers de nombreux laboratoires... 
 
+C'est en partant de ce constat que se dessine la première mission du stagiaire : **remettre à niveau et maintenir à jour de façon péreinne les informations liées au laboratoire sur le site internet.** La documentation qui va suivre va revenir sur les différents aspects à aborder pour s'assurer de la réussite de cette mission.
 
 ## Remise à niveau du point de vue de l'information
+Avant de partir bidouiller directement avec les outils informatique, il est important d'effectuer un premier travail de repérage des informations. Celui-ci peut être effectué, par exemple, en attendant que le stagiaire puisse avoir accès aux différents outils adminsitratifs lié au site.
 
 ### Travail de veille : identifier les informations susceptible d'être obsolètes
 /** Début du stage, discuter avec membre du personnel (notamment tuteur de stage) pour présenter les points sur lesquelles le laboratoire a besoin d'aide + effectuer une visite approfondie du site public pour détecter certaines failles (infos manquantes, liens morts, ...) **/
@@ -19,12 +21,16 @@ Indispensable aujourd'hui pour tous les organismes, le site web est un élément
 
 Au démarrage du stage, un temps d’échange avec les membres du laboratoire, et notamment le tuteur, a permis de cerner les besoins prioritaires en matière de mise à jour du site. Cette première étape a été suivie d’une exploration systématique du site web public du laboratoire afin de repérer les contenus problématiques : informations manquantes, liens inactifs, pages vides, incohérences entre sections, etc. Un tableau de suivi a ensuite été mis en place pour recenser les éléments à corriger ou enrichir.
 
+Ce travail de veille peut aussi servir à trouver un certain nombre d'outils pour effectuer ledit repérage, comme [Hypothes.is](../tools/intro_hypothesis.qmd).
+
 ### Contacter les services et personnes pour obtenir les renseignements nécessaires
 /** Pour update les biographies des chercheurs ou des axes par exemple **/
 
 ---
 
 La mise à jour d’un site repose également sur la qualité des informations collectées. Afin de compléter ou corriger les contenus existants (ex. : biographies de chercheurs, description des axes de recherche, actualités), un travail de prise de contact avec différents interlocuteurs a été engagé. Cela a impliqué d’envoyer des emails ciblés, parfois relancer, et organiser certaines discussions informelles pour obtenir les renseignements pertinents ou les documents manquants.
+
+Hypothes.is, mentionné précédemment, peut aussi servir dans ce cas.
 
 ### Comment afficher l'information pour la rendre lisible sur une page web
 /** Gros bloc de texte = non ; Penser à aérer le contenu le + possible **/
@@ -33,14 +39,15 @@ Tout comme de gros livres denses et mal présentés peuvent freiner voire repous
 
 (exemples)
 
-## Remise à niveau du point de vue technique 
+Conseil : faire ce travail d'éditorialisation du contenu sur Word, pour se donner les bonnes habitudes (sélection des bons niveaux de titrage, ...) 
+
+## Remise à niveau du point de vue technique
+Une fois 
 
 ### Collaboration avec l'équipe de webmaster de Paris 8
 /** Insertion/suggestion de nouveaux plugins, explication du fonctionnement du site, ... **/
 
 Le site étant hébergé et géré en grande partie par les services numériques de l’université, une collaboration avec l’équipe technique a été nécessaire. Cette étape a permis de mieux comprendre le fonctionnement du CMS utilisé (ici SPIP), les marges de manœuvre possibles pour un intervenant extérieur, ainsi que les processus de validation pour chaque modification. Des propositions d’amélioration ont pu être faites, comme par exemple avec l'intégration de nouveaux plugins permettant la communication entre l'API de HAL et le site du laboratoire.
-
-
 
 ### Hypertextualisation : créer de l'interactivité au sein du site
 

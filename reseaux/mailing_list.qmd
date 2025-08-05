@@ -7,4 +7,5 @@ format: html
 
 Objectif : Créer une multitude de réseau de mailing list interne (enseignant-chercheur, profs, partenaires, ...). 
 
-Logiciel qui risque d'être exploité : Brevo
+Logiciel exploité : Brevo 
+-> Détailler pourquoi

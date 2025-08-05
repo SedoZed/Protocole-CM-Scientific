@@ -1,6 +1,29 @@
 ---
-title: "Accueil - Gestion numérique d'un laboratoire"
+title: "Gestion de LinkedIn - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-Mise au point d'une ligne éditoriale répétitive sur LinkedIn
+# Gestion numérique d'un laboratoire - Créer et alimenter une page LinkedIn.
+
+## Introduction
+
+[introduction LinkedIn]
+
+[en quoi la gestion d'un LinkedIn de laboratoire est spécifique]
+
+## 1. Création d'une page LinkedIn
+
+Peut se faire à partir de n'importe quel compte LinkedIn
+
+### S'assurer de la pérénité du LinkedIn
+Mettre plusieurs propriétaires afin que même en cas de départ du créateur, la page reste attribuée au laboratoire.
+
+## 2. Mise en place d'une ligne éditoriale pour la page
+
+## 3. Inclure la page LinkedIn à l'écosystème de communication du laboratoire
+
+Il a été observé que même sans réaliser de publicité, des gens s'abonnent à la page, témoignant du réflexe de rechercher la page LinkedIn d'un organisme dans le monde professionnel
+
+### Intégrer des redirections sur le site internet / dans les mailing lists, ...
+
+### Inciter les membres du laboratoire à intégrer le LinkedIn
