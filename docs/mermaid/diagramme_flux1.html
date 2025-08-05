@@ -67,6 +67,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../assets/style.scss">
@@ -107,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Gestion d’une mailing list</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../communication/fiches.qmd">
+    <a class="dropdown-item" href="../communication/fiches_pdf.html">
  <span class="dropdown-text">Fiches de bons usages</span></a>
   </li>  
     </ul>
@@ -160,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Création de données exploitables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../donnees_labo/creation_vocabulaire_lie_aux_donnees.qmd">
+    <a class="dropdown-item" href="../donnees_labo/exploitation_dataset.html">
  <span class="dropdown-text">Plan de gestion des données</span></a>
   </li>  
     </ul>
@@ -185,14 +188,51 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>flowchart TD A([“Début : appel à calcRefs”]) –&gt; B{“dataCsv et dataItemSet existent-ils ?”} B – Oui –&gt; C@{ label: “Afficher ‘Calcul des références’ dans la console, mettre à jour le bouton d’export, afficher le loader” } B – Non –&gt; U([“Fin du programme”]) C –&gt; D[“Récupérer les en-têtes du CSV et la propriété o:title”] D –&gt; E[“Itérer sur chaque ligne du CSV”] E –&gt; F[“Itérer sur chaque en-tête”] F –&gt; G@{ label: “L’en-tête correspond-il à un ItemSet ?” } G – Oui –&gt; H@{ label: “Trouver l’ItemSet correspondant” } H –&gt; I@{ label: “Récupérer l’ItemSet &amp; séparer les valeurs avec le séparateur” } I –&gt; J@{ label: “Pour chaque valeur, trouver l’item dans l’ItemSet par titre” } J –&gt; K{“Item trouvé ?”} K – Oui –&gt; L@{ label: “Ajouter l’ID de l’item à la liste des valeurs” } K – Non –&gt; M[“Ajouter la valeur brute à la liste des valeurs”] L –&gt; N[“Concaténer les valeurs avec le séparateur”] M –&gt; N N –&gt; P[“Construire la nouvelle ligne”] G – Non –&gt; O@{ label: “Garder la valeur d’origine pour cette colonne” } O –&gt; P P –&gt; Q[“Ajouter la nouvelle ligne à nData”] Q –&gt; R[“Toutes les lignes sont-elles traitées ?”] R – Non –&gt; F R – Oui –&gt; S[“Mettre à jour dataResult et afficher le tableau”] S –&gt; T[“Cacher le loader”] T –&gt; U</p>
-<pre><code>C@{ shape: rect }
-G@{ shape: diamond }
-H@{ shape: rect }
-I@{ shape: rect }
-J@{ shape: rect }
-L@{ shape: rect }
-O@{ shape: rect }</code></pre>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A(["Début : appel à calcRefs"]) --&gt; B{"dataCsv et dataItemSet existent-ils ?"}
+    B -- Oui --&gt; C@{ label: "Afficher 'Calcul des références' dans la console, mettre à jour le bouton d'export, afficher le loader" }
+    B -- Non --&gt; U(["Fin du programme"])
+    C --&gt; D["Récupérer les en-têtes du CSV et la propriété o:title"]
+    D --&gt; E["Itérer sur chaque ligne du CSV"]
+    E --&gt; F["Itérer sur chaque en-tête"]
+    F --&gt; G@{ label: "L'en-tête correspond-il à un ItemSet ?" }
+    G -- Oui --&gt; H@{ label: "Trouver l'ItemSet correspondant" }
+    H --&gt; I@{ label: "Récupérer l'ItemSet &amp; séparer les valeurs avec le séparateur" }
+    I --&gt; J@{ label: "Pour chaque valeur, trouver l'item dans l'ItemSet par titre" }
+    J --&gt; K{"Item trouvé ?"}
+    K -- Oui --&gt; L@{ label: "Ajouter l'ID de l'item à la liste des valeurs" }
+    K -- Non --&gt; M["Ajouter la valeur brute à la liste des valeurs"]
+    L --&gt; N["Concaténer les valeurs avec le séparateur"]
+    M --&gt; N
+    N --&gt; P["Construire la nouvelle ligne"]
+    G -- Non --&gt; O@{ label: "Garder la valeur d'origine pour cette colonne" }
+    O --&gt; P
+    P --&gt; Q["Ajouter la nouvelle ligne à nData"]
+    Q --&gt; R["Toutes les lignes sont-elles traitées ?"]
+    R -- Non --&gt; F
+    R -- Oui --&gt; S["Mettre à jour dataResult et afficher le tableau"]
+    S --&gt; T["Cacher le loader"]
+    T --&gt; U
+
+    C@{ shape: rect }
+    G@{ shape: diamond }
+    H@{ shape: rect }
+    I@{ shape: rect }
+    J@{ shape: rect }
+    L@{ shape: rect }
+    O@{ shape: rect }
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
 
