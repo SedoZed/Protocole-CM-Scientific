@@ -14,7 +14,7 @@ website:
             text: "LinkedIn"
           - href: reseaux/mailing_list.qmd
             text: "Gestion d'une mailing list"
-          - href: communication/fiches.qmd
+          - href: communication/fiches_pdf.qmd
             text: "Fiches de bons usages"
       - text: "Gestion web"
         menu:
@@ -36,7 +36,7 @@ website:
         menu:
           - href: donnees_labo/creation_data_exploitables.qmd
             text: "Création de données exploitables"
-          - href: donnees_labo/creation_vocabulaire_lie_aux_donnees.qmd
+          - href: donnees_labo/exploitation_dataset.qmd
             text: "Plan de gestion des données"
 
 
