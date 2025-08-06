@@ -21,7 +21,7 @@ Il est **recommandé de commencer par cette étape** d'identification des inform
 
 - 2. **Effectuer soi-même son repérage sur le site web** : Ce repérage que le stagiaire va effectuer soi-même va lui permettre d'approfondir les diverses pistes apportées par la ou les disscussions mentionnées précédemment. Pour se faire, celui-ci doit ***se placer dans la peau d'un visiteur extérieur au laboratoire*** et naviguer rigoureusement dans chacune des rubriques et chaque article du site pour y repérer les coquilles à modifier à postériori tout en s'imprégnant de la structure du site, ce qui est très important pour y apporter les modifications nécessaires par la suite.
 
-[Animation montrant quelqu'un scruter les différentes rubriques et les articles de ces rubriques, surlignant des informations potentiellement erronées. NOTE : Ces informations peuvent être inclus par la suite dans un document Google Sheet / Microsoft Word / .txt](/assets/img/navigation.gif)
+Animation simple permettant de voir une simulation de consultation du site web de laboratoire (ici Paragraphe) pour un repérage. ->[Redirection](/assets/img/navigation.gif)
 
 ### Contacter les services et personnes pour obtenir les renseignements nécessaires
 
