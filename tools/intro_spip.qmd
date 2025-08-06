@@ -11,18 +11,17 @@ A l'instar de WordPress, "SPIP" est un CMS (*Content Management System*) c'est-�
 
 Au sein de l'université Paris 8, le choix a été fait de se baser sur l'utilisation de SPIP. Cependant, il est important de noter que rien ne garantit que le site web de chacun des laboratoires ou de chacune des instances de l'université n'utilisent pas un autre CMS (ou même s'ils en utilisent un tout court).
 
-## Premier accès à 
+## Accéder à l'interface
 Compte doit être créé + accès VPN à l'université de Paris 8 (autrement impossible d'accéder à l'interface). Cette étape peut prendre du temps, donc est à initier dès le début du stage.
 
-## Création de contenu sur SPIP - Les articles
+## Naviguer à travers l'interface SPIP
 
+### 
+
+## Création de contenu sur SPIP - Les articles
 
 ### Créer un article
 
 ### Référencer correctement un article
 
 ### Editer un article
-
-## Gestion du site 
-
-###

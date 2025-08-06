@@ -9,3 +9,5 @@ Objectif : Créer une multitude de réseau de mailing list interne (enseignant-c
 
 Logiciel exploité : Brevo 
 -> Détailler pourquoi
+
+à compléter...

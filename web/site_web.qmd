@@ -7,33 +7,31 @@ format: html
 
 ## Introduction
 
-Absolument indispensable de nos jours pour tous les organismes (laboratoire ou non), le site web d'un laboratoire se place comme étant très certainement l'élément principal de ce dernier pour assurer sa valorisation scientifique. En effet, ledit site constitue une sorte de vitrine pour le public, à laquelle sont exposées les activités du laboratoire et où le public se fera un premier opinion vis-à-vis de la crédibilité du laboratoire. S'assurer d'avoir un site maintenu à flot est donc primordial pour sauvegarder la crédibilité du laboratoire sur le plan scientifique. Cependant, comme mentionné en [introduction au corpus](../index.qmd), un manque de moyen pour s'occuper efficacement de ces tâches semble se faire ressentir à travers de nombreux laboratoires... 
+Absolument indispensable de nos jours pour toute organisation, le site web est un incontournable pour assurer sa communication qu'il est important de ne pas négliger. En effet, celui-ci constitue une véritable vitrine des activités du laboratoire où donc, la plupart du temps, le public se fera un premier opinion vis-à-vis de la crédibilité du laboratoire. S'assurer d'avoir un site maintenu à flot est donc primordial pour sauvegarder la crédibilité du laboratoire sur le plan scientifique. Cependant, comme mentionné en [introduction au corpus](/index.qmd), un manque de moyen pour s'occuper efficacement de ces tâches semble se faire ressentir à travers de nombreux laboratoires... 
 
 C'est en partant de ce constat que se dessine la première mission du stagiaire : **remettre à niveau et maintenir à jour de façon péreinne les informations liées au laboratoire sur le site internet.** La documentation qui va suivre va revenir sur les différents aspects à aborder pour s'assurer de la réussite de cette mission.
 
-## Remise à niveau du point de vue de l'information
-Avant de partir bidouiller directement avec les outils informatique, il est important d'effectuer un premier travail de repérage des informations. Celui-ci peut être effectué, par exemple, en attendant que le stagiaire puisse avoir accès aux différents outils adminsitratifs lié au site.
+## I. Remise à niveau du point de vue de l'information
 
-### Travail de veille : identifier les informations susceptible d'être obsolètes
-/** Début du stage, discuter avec membre du personnel (notamment tuteur de stage) pour présenter les points sur lesquelles le laboratoire a besoin d'aide + effectuer une visite approfondie du site public pour détecter certaines failles (infos manquantes, liens morts, ...) **/
+Il est **recommandé de commencer par cette étape** d'identification des informations à modifier à l'avenir afin d'ensuite pouvoir arriver face aux interfaces avec une idée des modifications à apporter.
 
----
+### Travail de veille : identifier les informations susceptible d'être obsolètes ou maanquantes
 
-Au démarrage du stage, un temps d’échange avec les membres du laboratoire, et notamment le tuteur, a permis de cerner les besoins prioritaires en matière de mise à jour du site. Cette première étape a été suivie d’une exploration systématique du site web public du laboratoire afin de repérer les contenus problématiques : informations manquantes, liens inactifs, pages vides, incohérences entre sections, etc. Un tableau de suivi a ensuite été mis en place pour recenser les éléments à corriger ou enrichir.
+- 1. **Discuter avece le personnel des premiers constats effectués** : Cette première discussion, plutôt à effectuer au début du stage, va permettre au stagiaire d'obtenir une première direction vers où s'orienter dans son travail, en visualisant la charge de travail demandée, le niveau de priorité des différentes modifications à apporter, certaines informations sur le laboratoire ou encore [certains documents contenant des informations utiles qu'il serait pertinent d'exploiter](/web/integ_doc.qmd). 
 
-Ce travail de veille peut aussi servir à trouver un certain nombre d'outils pour effectuer ledit repérage, comme [Hypothes.is](../tools/intro_hypothesis.qmd).
+- 2. **Effectuer soi-même son repérage sur le site web** : Ce repérage que le stagiaire va effectuer soi-même va lui permettre d'approfondir les diverses pistes apportées par la ou les disscussions mentionnées précédemment. Pour se faire, celui-ci doit ***se placer dans la peau d'un visiteur extérieur au laboratoire*** et naviguer rigoureusement dans chacune des rubriques et chaque article du site pour y repérer les coquilles à modifier à postériori tout en s'imprégnant de la structure du site, ce qui est très important pour y apporter les modifications nécessaires par la suite.
+
+[Animation montrant quelqu'un scruter les différentes rubriques et les articles de ces rubriques, surlignant des informations potentiellement erronées. NOTE : Ces informations peuvent être inclus par la suite dans un document Google Sheet / Microsoft Word / .txt](/assets/img/navigation.gif)
 
 ### Contacter les services et personnes pour obtenir les renseignements nécessaires
-/** Pour update les biographies des chercheurs ou des axes par exemple **/
 
----
+Certaines informations ne vous seront pas accessibles facilement car trop précises, comme dans le cas d'un projet mené par un(e) enseignant.e-chercheur.euse ou dans le cas d'une biographie par exemple. Ainsi, il ne faut surtout pas hésiter à contacter les personnes concernées pour leur demander des informations où, au minimum, les informer de vous contacter dans le cas où ils voudraient effecteur des modifications. 
 
-La mise à jour d’un site repose également sur la qualité des informations collectées. Afin de compléter ou corriger les contenus existants (ex. : biographies de chercheurs, description des axes de recherche, actualités), un travail de prise de contact avec différents interlocuteurs a été engagé. Cela a impliqué d’envoyer des emails ciblés, parfois relancer, et organiser certaines discussions informelles pour obtenir les renseignements pertinents ou les documents manquants.
+### NOTE : Comment afficher l'information pour la rendre lisible sur une page web ?
 
-Hypothes.is, mentionné précédemment, peut aussi servir dans ce cas.
+Parfois, ce ne sont pas les informations qui demandent une correction mais plutôt la façon dont celles-ci sont présentées.
 
-### Comment afficher l'information pour la rendre lisible sur une page web
-/** Gros bloc de texte = non ; Penser à aérer le contenu le + possible **/
+[insérer gif / image ?]
 
 Tout comme de gros livres denses et mal présentés peuvent freiner voire repousser le lecteur, une information ou une page web mal éditorialisée sur le plan visuel peut constituer un frein significatif à la navigation sur le site. De longues pages de texte denses nuisent à la compréhension et à l’attention du lecteur. L’objectif a donc été de structurer les contenus en diverses parties voire en divers articles, d’insérer des titres et sous-titres explicites, d’aérer les paragraphes et, autant que possible, d’intégrer des éléments visuels (liens, images, documents téléchargeables) pour dynamiser la navigation.
 
@@ -42,7 +40,8 @@ Tout comme de gros livres denses et mal présentés peuvent freiner voire repous
 Conseil : faire ce travail d'éditorialisation du contenu sur Word, pour se donner les bonnes habitudes (sélection des bons niveaux de titrage, ...) 
 
 ## Remise à niveau du point de vue technique
-Une fois 
+
+Il est **recommandé de réserver l'utilisation du ou des outils d'administration du site web au moment où le travail de repérage a été effectué**, afin de fluidifier le processus de mise à jour. En effet, avoir une "liste" des informations à changer à tels endroits est plus optimale que de naviguer dans l'arborescence pour vérifier chacuns des articles (risque de se perdre, processus long, ...).
 
 ### Collaboration avec l'équipe de webmaster de Paris 8
 /** Insertion/suggestion de nouveaux plugins, explication du fonctionnement du site, ... **/
@@ -52,3 +51,7 @@ Le site étant hébergé et géré en grande partie par les services numériques
 ### Hypertextualisation : créer de l'interactivité au sein du site
 
 Une fois à l’aise avec l’architecture du site et l’[usage de SPIP](../tools/intro_spip.qmd), un travail d’hypertextualisation a été amorcé. Il s’agissait ici de renforcer la cohérence interne du site en ajoutant des liens entre pages, en reliant les contenus entre eux (par exemple : projets ↔ publications ↔ membres), et en facilitant la navigation via des liens contextuels. Ce travail améliore considérablement l’expérience utilisateur et donne une image plus dynamique du laboratoire.
+
+## III. Assurer une maintenance continue
+
+Ce travail de veille peut aussi servir à trouver un certain nombre d'outils pour effectuer ledit repérage, comme [Hypothes.is](../tools/intro_hypothesis.qmd).
