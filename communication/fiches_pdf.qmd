@@ -1,6 +1,15 @@
 ---
-title: "Création de fiches usages - Gestion numérique d'un laboratoire"
+title: "Rédiger des fiches d'usages - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-# Gestion numérique d'un laboratoire - Création de fiches de bons usages pour le personnel
+# Gestion numérique d'un laboratoire - Rédiger des fiches d'usages
+
+[**WORK IN PROGRESS**]
+
+## Introduction
+
+**Durée** :
+- à mettre en place : MODEREE/LONG (Peut prendre un certain temps de transposer ses apprentissages et de les rendre le plus pédagogique possible)
+
+ Faire une fiche protocolaire et pédagogique permettant l'exploitation à venir d'un nouveau outil ou l'adaptation de certains comportements pour le personnel du laboratoire (exemple : utilisation d'Hypothes.is, ...)

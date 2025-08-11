@@ -37,10 +37,9 @@ Ce corpus de document a été créé en Markdown via l'extension pour VisualStud
 
 ### Communication
 - [Réseaux Sociaux : LinkedIn](/reseaux/linkedin.qmd)
-- [Gestion des informations HAL](redir)
-- [Mise en place d'une mailing list](/reseaux/mailing_list.qmd) ; 
-- [Création de fiches à destination du personnel](redir)
+- [Mise en place d'une mailing list](/reseaux/mailing_list.qmd)
+- [Création de fiches à destination du personnel](/communication/fiches_pdf.qmd)
 
 ## Mentions légales
 
-[Insérer droits Creative Commons]
+https://creativecommons.org/licenses/by-nc-sa/4.0/
