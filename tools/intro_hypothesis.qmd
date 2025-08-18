@@ -3,7 +3,7 @@ title: "Hypothes.is - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-# Gestion numérique d'un laboratoire : Introduction à l'outil "Hypothes.is"
+# Introduction à l'outil "Hypothes.is"
 
 ## Introduction
 

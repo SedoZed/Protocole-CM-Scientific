@@ -1,13 +1,26 @@
 ---
-title: "Mise en place d'une mailing list interne - Gestion numérique d'un laboratoire"
+title: "Mailing List - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-# Gestion numérique d'un laboratoire - Mise en place d'une mailing list interne
+# Mise en place d'une mailing list interne
 
-Objectif : Créer une multitude de réseau de mailing list interne (enseignant-chercheur, profs, partenaires, ...). 
+[**WORK IN PROGRESS**]
+
+Objectif : Créer une multitude de mailing list interne (enseignant-chercheur, profs, partenaires, ...) pour transmettre des informations interne au laboratoire à différents niveaux, que ça soit au sein d'un axe ou d'autres informations plus globales (consignes, création de canaux, ...)
+
+Créer un canal WhatsApp Business ?  
+
+DUREE :
+- à mettre en place : à déterminer
+- à maintenir sur le long terme : à déterminer
 
 Logiciel exploité : Brevo 
 -> Détailler pourquoi
+->
 
-à compléter...
+Tutoriel mise en place de Brevo : https://www.brevo.com/fr/blog/creer-une-newsletter/
+D'autres logiciels de mailing list / newsletter : https://www.brevo.com/fr/blog/logiciel-emailing/
+
+intégrer d'office les enseignants chercheurs ayant donné leur mail + créer un formulaire pour intégrer ou non la mailing list.
+Faire en sorte de subdiviser en plusieurs sous-listes pour créer différents groupes (par axes, ...) 

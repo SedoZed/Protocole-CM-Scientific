@@ -1,15 +1,21 @@
 ---
-title: "Gestion de LinkedIn - Gestion numérique d'un laboratoire"
+title: "LinkedIn - Gestion numérique d'un laboratoire"
 format: html
 ---
 
 # Gestion numérique d'un laboratoire - Créer et alimenter une page LinkedIn.
+
+[**WORK IN PROGRESS**]
 
 ## Introduction
 
 [introduction LinkedIn]
 
 [en quoi la gestion d'un LinkedIn de laboratoire est spécifique]
+
+Durée : 
+- à mettre en place : à déterminer
+- à maintenir sur le long terme : à déterminer
 
 ## 1. Création d'une page LinkedIn
 

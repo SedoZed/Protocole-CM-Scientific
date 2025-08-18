@@ -3,7 +3,9 @@ title: "Introduction à SPIP - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-# Gestion numérique d'un laboratoire - Introduction à SPIP
+# Introduction à SPIP
+
+[**WORK IN PROGRESS**]
 
 ## Introduction
 

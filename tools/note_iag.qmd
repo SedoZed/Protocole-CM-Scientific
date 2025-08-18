@@ -3,7 +3,9 @@ title: "Accueil - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-# Gestion numérique d'un laboratoire - Note sur l'utilisation de l'IA générative
+# Note sur l'utilisation de l'IA générative
+
+[**WORK IN PROGRESS**]
 
 ## Introduction
 

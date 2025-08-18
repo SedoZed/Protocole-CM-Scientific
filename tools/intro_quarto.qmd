@@ -3,6 +3,27 @@ title: "Accueil - Gestion numérique d'un laboratoire"
 format: html
 ---
 
+# Introduction à Quarto et au Markdown
+
+[**WORK IN PROGRESS**]
+
+## Introduction au sujet
+
 Utile pour la création de document comme ceux-ci, ou pour faire des fiches de bons usages du numérique par le personnel
 
-à compléter...
+MarkDown
+
+Quarto
+
+## L'intérêt du MarkDown
+Documentation MarkDown : https://www.markdownguide.org/getting-started/
+
+Permet de créer des documents facilement, avec un format exploitable universellement (et non dépendant d'une autre interface) et facile à apprendre.
+
+
+## L'intérêt de Quarto
+
+Installation de Quarto : https://quarto.org/docs/get-started/
+Documentation Quarto : https://quarto.org/docs/get-started/hello/vscode.html
+
+Permet de convertir le markdown en page web, qui pourront par la suite être hébergés sur des plateformes comme GitHub ou GitLab

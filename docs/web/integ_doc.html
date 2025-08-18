@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Gestion d’une mailing list</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../communication/fiches.qmd">
+    <a class="dropdown-item" href="../communication/fiches_pdf.html">
  <span class="dropdown-text">Fiches de bons usages</span></a>
   </li>  
     </ul>
@@ -160,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Création de données exploitables</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../donnees_labo/creation_vocabulaire_lie_aux_donnees.qmd">
+    <a class="dropdown-item" href="../donnees_labo/exploitation_dataset.html">
  <span class="dropdown-text">Plan de gestion des données</span></a>
   </li>  
     </ul>
@@ -181,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gestion-numérique-dun-laboratoire---intégration-efficace-dun-document" id="toc-gestion-numérique-dun-laboratoire---intégration-efficace-dun-document" class="nav-link active" data-scroll-target="#gestion-numérique-dun-laboratoire---intégration-efficace-dun-document">Gestion numérique d’un laboratoire - Intégration efficace d’un document</a>
+  <li><a href="#intégration-efficace-dun-document-selon-les-codes-du-web" id="toc-intégration-efficace-dun-document-selon-les-codes-du-web" class="nav-link active" data-scroll-target="#intégration-efficace-dun-document-selon-les-codes-du-web">Intégration efficace d’un document selon les codes du WEB</a>
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#travail-de-structuration-du-document" id="toc-travail-de-structuration-du-document" class="nav-link" data-scroll-target="#travail-de-structuration-du-document">Travail de structuration du document</a>
@@ -216,17 +216,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="gestion-numérique-dun-laboratoire---intégration-efficace-dun-document" class="level1">
-<h1>Gestion numérique d’un laboratoire - Intégration efficace d’un document</h1>
+<section id="intégration-efficace-dun-document-selon-les-codes-du-web" class="level1">
+<h1>Intégration efficace d’un document selon les codes du WEB</h1>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>HCERES et toussa toussa</p>
+<p>Durant le processus de mise à jour et/ou de maintien à flot du site web, le stagiaire pourra être amené à intégrer certains documents au site web pour diverses raisons : affichage à la vue de tous, informations pouvant servir à la maintenance du site, … Cependant, ces documents ne sont souvent pas structurés correctement pour une exploitation efficace par un navigateur. Tout un processus de rééditorialisation du document est donc nécessaire pour l’adapter aux règles de lecture et de navigation du web.</p>
+<p>A titre d’exemple, lors du stage ayant servi à la rédaction de ce corpus protocolaire, il fut demandé l’éditorisalisation web du dernier rapport HCERES émis par le laboratoire, afin de pouvoir en exploiter les nombreuses informations liées au laboratoire (informations générales sur le laboratoire, informations sur des projets en cours ou réalisés, …) pour effectuer des mises à jour ou des publications d’articles.</p>
+<p>Ci-dessous quelques lignes de protocole et quelques conseils sur le processus d’éditorialisation d’un document.</p>
+<p><strong>Durée</strong> : - à mettre en place : MODEREE (dépend de la taille du document principalement)</p>
 </section>
 <section id="travail-de-structuration-du-document" class="level2">
 <h2 class="anchored" data-anchor-id="travail-de-structuration-du-document">Travail de structuration du document</h2>
 <section id="dabord-du-repérage" class="level3">
 <h3 class="anchored" data-anchor-id="dabord-du-repérage">D’abord, du repérage</h3>
-<p>Repérer les diverses parties &amp; sous-parties = identifier ce qui sera un article ou une rubrique, notamment Repérer la structure hiérarchique des titres (t1, t2, …) ainsi que des divers styles (pourquoi x élément en gras / en italique, …) = Processus d’éditorialisation du document &amp; d’appropriation de ce dernier (un document qui n’a pas été approprié en amont sera ensuite mal implémanté)</p>
+<p>La première tâche <strong>à absolument effectuer</strong> est un <strong>repérage approfondi du document</strong>, avec pour objectif de s’imprégner de sa structure et ainsi pouvoir se projeter sur la façon d’intégrer efficacement le document sur le web. Si cette étape est négligée, le processus d’éditorialisation du document sera certainement peu optimisé et le résultat final très certainement mal implémenté et/ou peu convaincant.</p>
+<p><strong>Comment s’y prendre :</strong> La meilleure façon d’effectuer ce repérage est repasser plusieurs fois dessus, en repérant d’abord les éléments généraux sur la structure <em>(1)</em>, puis d’affiner l’analyse progressivement <em>(2)</em> jusqu’à arriver à la signification visuelle des plus petits éléments <em>(3)</em>.</p>
+<ol type="1">
+<li>La première étape, celle du relevage des éléments généraux, va permettre deux choses : comprendre de quoi parle le document et visualiser comment le découper par la suite en fonction des diverses parties. A ce niveau, après avoir survolé une première fois le document, s’il s’agit d’un document issu d’un traitement de texte (PDF, <em>Word</em>, <em>Sheets</em>, …) et que celui-ci a bien été structuré en amont, il est possible de se fier à la <em>table des matières</em> insérée dans le document ou fournie par votre logiciel (référencant les divers niveaux de titrage).</li>
+</ol>
+<p>[insérer exemple avec rapport HCERES, découpé en quatre grande parties]</p>
+<ol start="2" type="1">
+<li>Une fois les grands axes du document déterminés, il est possible de passer à la seconde étape, soit celle où l’analyse s’approfondie. A ce niveau, il s’agit de traiter des divers plus petits niveaux de titrage (jusqu’à ceux n’apparaissant pas forcément dans la table des matières). Cette étape permet par ailleurs de s’imprégner plus en profondeur du document, ce qui peut déjà permettre quelques remodelage de la structure déjà définie.</li>
+</ol>
+<p>[insérer exemple avec rapport HCERES]</p>
+<ol start="3" type="1">
+<li>Enfin, une fois la structure globalement analysée, nous arrivons à l’analyse des différents choix typographique. Il est très probable que pendant le repérage vous avez vu des zones en <strong>gras</strong>, en <em>italique</em>, avec une police plus ou moins grosse, etc… Cette étape consiste donc à revenir sur ces zones typographiquement différentes pour tenter de comprendre la signification (référence bibliographique, information importante, …) puis de se demander comment l’information mise en valeur par la typopgraphie peut être retranscrite ensuite sur le web.</li>
+</ol>
+<p>[insérer exemple avec rapport HCERES]</p>
 </section>
 <section id="ensuite-une-première-implémentation" class="level3">
 <h3 class="anchored" data-anchor-id="ensuite-une-première-implémentation">Ensuite, une première implémentation</h3>
@@ -235,6 +251,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="enfin-ladapter-aux-codes-du-web" class="level3">
 <h3 class="anchored" data-anchor-id="enfin-ladapter-aux-codes-du-web">Enfin, l’adapter aux codes du web</h3>
+<p>Comme déjà évoqué lors de l’<a href="../web/site_web.html">étape de mise à jour du site</a>, l’adaptation du document récemment importé aux codes du web est primordial pour son utilisation.</p>
 <p>hypertextualisation, recoupage en plusieurs articles, … NOTE conseil : Conserver une trace complète du document importée dans le site, c’est-à-dire création de nouveaux articles à chaque fois</p>
 
 

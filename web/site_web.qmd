@@ -3,7 +3,7 @@ title: "Gérer le site web - Gestion numérique d'un laboratoire"
 format: html
 ---
 
-# Gestion numérique d'un laboratoire - Maintenir à jour le site internet
+# Maintenir à jour le site internet du laboratoire
 
 ## Introduction
 

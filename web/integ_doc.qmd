@@ -3,7 +3,7 @@ title: "Intégration efficace d'un document - Gestion numérique d'un laboratoir
 format: html
 ---
 
-# Gestion numérique d'un laboratoire - Intégration efficace d'un document
+# Intégration efficace d'un document selon les codes du WEB
 
 ## Introduction
 
