@@ -5,7 +5,7 @@ format: html
 
 # Introduction à l'outil "Hypothes.is"
 
-## Introduction
+## Introduction au sujet
 
 [Hypothes.is](https://web.hypothes.is/) est une application web open source ayant pour objectif d’enrichir la lecture en ligne via des annotations collaboratives. En effet, l'application offre aux utilisateurs la possibilité de surligner ou d'annoter des pages web ou des documents PDF comme dans un livre, puis d'y lancer des discussions entre utilisateurs à partir même de ces annotations. Ces annotations peuvent être consultées par les utilisateurs du monde entier, via un canal _Public_ par défaut, ou par un nombre de collaborateurs plus restreint, via la création simple et rapide de groupes collaboratifs privés.
 
@@ -92,6 +92,3 @@ Afin d'assurer une utilisation efficace de l'application et du processus de valo
 - N'hésitez pas à répondre aux annotations laissées par vos collègues pour approfondir si nécessaire (préciser, infirmer, ...).
 - Dans le cas où les modifications sont conséquentes ou qu'il y a besoin d'un nouvel article (notamment pour le site internet), privilégier le contact par mail du community manager et/ou de ses associés. Une courte annotation peut ceci-dit être laissée pour y indiquer le besoin. 
 - (Ce protocole est susceptible d'évoluer avec le temps)
-
-
-![Logo Paragraphe](/assets/img/logo-paragraphe-blanc.svg) !
