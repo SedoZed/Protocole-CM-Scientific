@@ -111,3 +111,8 @@ labo:montantTotal_part a rdf:Property ;
     rdfs:label "Part du bénéfice total" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
+
+labo:isPorteur a rdf:Property ;
+    rdfs:label "Est-il porteur" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
