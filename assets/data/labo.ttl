@@ -37,6 +37,11 @@ labo:Doctorant a rdfs:Class ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
+labo:Contrats a rdfs:Class ;
+    rdfs:label "Contrats" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
 labo:etablissement a rdf:Property ;
     rdfs:label "Etablissement de l'individu" ;
     rdfs:domain o:Resource ;
@@ -87,4 +92,17 @@ labo:hasTheseAdvisor a rdf:Property ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
+labo:fundedBy a rdf:Property ;
+    rdfs:label "Projet porté par" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
 
+labo:projectEmittingCountry a rdf:Property ;
+    rdfs:label "Pays éméteur du projet" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+labo:numOpe a rdf:Property ;
+    rdfs:label "Numéro d'opération" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
