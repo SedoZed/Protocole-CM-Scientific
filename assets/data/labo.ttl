@@ -106,3 +106,8 @@ labo:numOpe a rdf:Property ;
     rdfs:label "Numéro d'opération" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
+
+labo:montantTotal_part a rdf:Property ;
+    rdfs:label "Part du bénéfice total" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
