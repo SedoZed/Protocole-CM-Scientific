@@ -113,6 +113,6 @@ labo:montantTotal_part a rdf:Property ;
     vs:term_status "experimental" .
 
 labo:isPorteur a rdf:Property ;
-    rdfs:label "Est-il porteur" ;
+    rdfs:label "Porteur (O/N)" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
