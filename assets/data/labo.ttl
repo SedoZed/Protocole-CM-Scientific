@@ -116,3 +116,8 @@ labo:isPorteur a rdf:Property ;
     rdfs:label "Porteur (O/N)" ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
+
+labo:partenaire a rdf:Property ;
+    rdfs:label "Partenaire secondaire" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
