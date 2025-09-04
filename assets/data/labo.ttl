@@ -17,6 +17,11 @@ labo:Laboratoire a rdfs:Class ;
     rdfs:domain o:Resource ;
     vs:term_status "experimental" .
 
+labo:Axe a rdfs:Class ;
+    rdfs:label "Axe de recherche" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
 labo:EnseigantChercheur a rdfs:Class ;
     rdfs:label "Enseignant chercheur" ;
     rdfs:domain o:Resource ;
